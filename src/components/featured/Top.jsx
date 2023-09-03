@@ -48,7 +48,7 @@ const Top = () => {
 
   return (
     <div className="col-md-4 col-12">
-      <h2 className="section-title">Top Article</h2>
+      <h2 className="section-title">Chapisho La_Wiki</h2>
 
       {posts.map(post => {
         const { title, category, date, image } = post.frontmatter
@@ -80,7 +80,7 @@ const Top = () => {
               <ul className="card-meta list-inline">
                 <li className="list-inline-item">
                   <AiOutlineClockCircle />
-                  {Math.ceil(post.fields.timeToRead.words / 275)} Min Read
+                  {Math.ceil(post.fields.timeToRead.words / 275)} Dakika Kusoma
                 </li>
                 <li className="list-inline-item">
                   <GoCalendar /> {date}
@@ -115,7 +115,7 @@ const Top = () => {
                   lower: true,
                 })}`}
               >
-                Read More
+                Soma Zaidi
               </a>
             </div>
           </article>
