@@ -10,7 +10,7 @@ const SidebarCategories = () => {
   return (
     <SidebarCard>
       <Wrapper>
-        <Title title="categories"></Title>
+        <Title title="mada"></Title>
         <CategoriesDistinct />
       </Wrapper>
     </SidebarCard>
