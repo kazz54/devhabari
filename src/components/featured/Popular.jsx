@@ -47,7 +47,7 @@ const Popular = () => {
 
   return (
     <div className="col-md-4 col-12">
-      <h2 className="section-title">Popular</h2>
+      <h2 className="section-title">Mashuhuri</h2>
 
       {posts.map(post => {
         const { title, category, date, image } = post.frontmatter
@@ -79,7 +79,7 @@ const Popular = () => {
               <ul className="card-meta list-inline">
                 <li className="list-inline-item">
                   <AiOutlineClockCircle />
-                  {Math.ceil(post.fields.timeToRead.words / 275)} Min Read
+                  {Math.ceil(post.fields.timeToRead.words / 275)} Dakika Soma
                 </li>
                 <li className="list-inline-item">
                   <GoCalendar /> {date}
@@ -114,7 +114,7 @@ const Popular = () => {
                   lower: true,
                 })}`}
               >
-                Read More
+                Soma Zaidi
               </a>
             </div>
           </article>
