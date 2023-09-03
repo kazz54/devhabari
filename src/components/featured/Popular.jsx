@@ -79,7 +79,7 @@ const Popular = () => {
               <ul className="card-meta list-inline">
                 <li className="list-inline-item">
                   <AiOutlineClockCircle />
-                  {Math.ceil(post.fields.timeToRead.words / 275)} Dakika Soma
+                  {Math.ceil(post.fields.timeToRead.words / 275)} Dakika Kusoma
                 </li>
                 <li className="list-inline-item">
                   <GoCalendar /> {date}
