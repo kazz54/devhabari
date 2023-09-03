@@ -33,7 +33,7 @@ const Post = ({ excerpt, frontmatter, fields }) => {
           <ul className="card-meta list-inline">
             <li className="list-inline-item">
               <AiOutlineClockCircle />
-              {Math.ceil(words / 275)} Min Read
+              {Math.ceil(words / 275)} Dakika Kusoma
             </li>
             <li className="list-inline-item">
               <GoCalendar /> {date}
@@ -66,7 +66,7 @@ const Post = ({ excerpt, frontmatter, fields }) => {
             className="btn btn-outline-primary"
             to={`/${category.toLowerCase()}/${slugify(title, { lower: true })}`}
           >
-            Read More
+            Soma Zaidi
           </Link>
         </div>
       </article>
