@@ -10,6 +10,42 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+// gatsby-config.js
+const myQuery = `
+  query {
+    pages: allSitePage {
+      nodes {
+        # querying id is required
+        id
+        component
+        path
+        componentChunkName
+        jsonName
+        internal {
+          # querying internal.contentDigest is required
+          contentDigest
+          type
+          owner
+        }
+      }
+    }
+  }
+`;
+
+const queries = [
+  {
+    query: myQuery,
+    queryVariables: {}, // optional. Allows you to use graphql query variables in the query
+    transformer: ({ data }) => data.pages.nodes, // optional
+    indexName: 'index name to target', // overrides main index name, optional
+    settings: {
+      // optional, any index settings
+      // Note: by supplying settings, you will overwrite all existing settings on the index
+    },
+    mergeSettings: false, // optional, defaults to false. See notes on mergeSettings below
+  },
+];
+
 module.exports = {
   pathPrefix: `/`,
   siteMetadata: {
@@ -47,8 +83,19 @@ module.exports = {
         options: {
         appId: process.env.ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME,  
-        queries: require("./src/utils/algolia-queries")
+        indexName: process.env.ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 10000, // default: 1000
+        settings: {
+          // optional, any index settings
+          // Note: by supplying settings, you will overwrite all existing settings on the index
+        },
+        mergeSettings: false, // optional, defaults to false. See notes on mergeSettings below
+        concurrentQueries: false, // default: true
+        dryRun: false, // default: false, only calculate which objects would be indexed, but do not push to Algolia
+        continueOnFailure: false, // default: false, don't fail the build if Algolia indexing fails
+        algoliasearchOptions: undefined,   
+       // queries: require("./src/utils/algolia-queries")
       },
      },
     {
