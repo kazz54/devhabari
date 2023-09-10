@@ -5,9 +5,10 @@
  */
 
 const path = require('path')
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require("dotenv").config()
+//require('dotenv').config({
+//  path: `.env.${process.env.NODE_ENV}`,
+//})
 
 module.exports = {
   pathPrefix: `/`,
@@ -41,14 +42,14 @@ module.exports = {
     //     policy: [{ userAgent: '*', allow: '/' }],
     //   },
     // },
-      {
-         resolve: `gatsby-plugin-algolia`,
-         options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        queries: require("./src/utils/algolia-queries")
-      },
-    },
+    //  {
+    //     resolve: `gatsby-plugin-algolia`,
+    //     options: {
+    //    appId: process.env.GATSBY_ALGOLIA_APP_ID,
+    //    apiKey: process.env.ALGOLIA_ADMIN_KEY,
+    //    queries: require("./src/utils/algolia-queries")
+    //  },
+   // },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
