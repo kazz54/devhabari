@@ -50,7 +50,7 @@ module.exports = {
         indexName: process.env.ALGOLIA_INDEX_NAME,  
         queries: require("./src/utils/algolia-queries")
       },
-    //},
+     },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
