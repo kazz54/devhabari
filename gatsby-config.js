@@ -5,7 +5,7 @@
  */
 
 const path = require('path')
-const queries = require("./src/utils/algolia")
+//const queries = require("./src/utils/algolia")
 //require("dotenv").config()
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -62,7 +62,7 @@ module.exports = {
         dryRun: false, // default: false, only calculate which objects would be indexed, but do not push to Algolia
         continueOnFailure: false, // default: false, don't fail the build if Algolia indexing fails
         algoliasearchOptions: undefined,   
-       // queries: require("./src/utils/algolia-queries")
+        queries: require("./src/utils/algolia-queries")
       },
      },
     {
