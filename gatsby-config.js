@@ -5,8 +5,6 @@
  */
 
 const path = require('path')
-const queries = require("./src/utils/algolia")
-//require("dotenv").config()
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -46,25 +44,6 @@ module.exports = {
     //   },
     // },
      {
-       resolve: `gatsby-plugin-algolia`,
-       options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_API_KEY,
-        //indexName: process.env.ALGOLIA_INDEX_NAME,
-        queries,
-        chunkSize: 10000, // default: 1000
-        settings: {
-          // optional, any index settings
-          // Note: by supplying settings, you will overwrite all existing settings on the index
-        },
-        mergeSettings: false, // optional, defaults to false. See notes on mergeSettings below
-        concurrentQueries: false, // default: true
-        dryRun: false, // default: false, only calculate which objects would be indexed, but do not push to Algolia
-        continueOnFailure: false, // default: false, don't fail the build if Algolia indexing fails
-        algoliasearchOptions: undefined,   
-        //queries: require("./src/utils/algolia-queries")
-      },
-     },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
