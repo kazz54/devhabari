@@ -43,7 +43,7 @@ module.exports = {
     //     policy: [{ userAgent: '*', allow: '/' }],
     //   },
     // },
-     {
+    // {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
