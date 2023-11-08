@@ -138,8 +138,13 @@ kama node kwenye huu mti. Kwa kutumia javascript tunaweza kuzifikia hizi node na
 
 Bilashaka Mpaka hapa umekwisha pata twaswira zuri ya nyenzo ambazo tunazitumia, tutoke 
 kwenye nadharia hadi kwenye vitendo kwa tufunge safari 
-hadi **github** kutengeneza hazina github itabidi uwe na **account** github 
+hadi **github**. 
+
+Kutengeneza hazina github itabidi uwe na **account** github 
 kama huna jisajili alafu uingie github, na kufanya ifuatavyo,
+
+
+![img](https://i.ibb.co/Pt92z6Y/github-create-newrepo.jpg)
 
 
 ![img](https://i.ibb.co/m4nY254/git-new-repo.jpg)
@@ -149,7 +154,118 @@ kama huna jisajili alafu uingie github, na kufanya ifuatavyo,
 ![img](https://i.ibb.co/cQ7p0c5/github-create-new-repo.jpg)
 
 
-![img](https://i.ibb.co/Pt92z6Y/github-create-newrepo.jpg)
 
 
 
+
+Kabla yakuendelea ningependa ufahamuu kwamba mpangilio wa mafaili nitakao tumia ni **flat** "bapa" kwa sababu application ninayo tengeneza ni ndogo, mtindo huu ni mwepesi kueleweka kwa mtu ambaye ana azaa kitu ambacho makala haya yanalenga. Zaidi yahapo ukisha fahamu mpangilio huu nirahisi kupanga vyovyote utakavyo kama unataka uweke kwenye mpangilio kwama **json** nikimanisha **fractal** uwamuzi niwako. 
+
+Nitatumia **PascalCasing** kuvipa majina vifaa vyangu na **CamelCasing** nitatumia kwenye majina ya directors/folders.  
+
+>>Kwa juu juu tutakua na kitu kama hiki kumbukumbu huu hapa nimfano tu, siyo mpangilio uliyo kamilika kwa mpangilio uliyo kamilika nenda kwenye hathina yetu ya  github. 
+
+```
+public 
+|- index.html
+src
+|- index.js
+|- App.js
+|- components 
+   |- styles
+      |-Global.js
+      |-Header.styled.js
+   |- Header.js
+   |- Content.js
+   |- Footer.js
+README.MD
+package.json
+```
+
+Umepata taswira! Tusonge mbele tengeneza faili jingine na kuliita `package.json`  faili hili maranyingi lina kaa kwenye mzizi wa application yako, ili kulitengeneza hili faili github utafanya hivi
+![github tengeneza faili ](https://i.ibb.co/LvMvWRT/github-create-file.jpg)
+weka.
+```javascript 
+{
+  "name": "dodosa",
+  "author": "devduara0",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "5.2.0",
+    "react-icons": "^4.2.0",
+    "react-scripts": "4.0.3",
+    "contentful": "7.2.0",
+    "styled-components": "^5.3.1",
+    "web-vitals": "^1.0.1"
+
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+
+``` 
+
+faili hili nila **json** na tunaonyesha **vifurushi** ambavyo **application** yetu inavihitaji ili iweze kufanya kazi kama tunavyo kusudia. 
+
+Nimeanza  na kuweka **jina** la application, jina la **muandishi**, **toleo** la application, na tumesema ni **private** ili isije kwa bahatimbaya lika chapishwa kwenye **hathina** za **npm**, **dependencies** ni vifurushi ambayo application yetu inategeme iliiweze kufanya kazi kama tunavyo kusudia,
+tunaonyesha **script** za **node** ambazo tunaweza  kuziendesha, **eslintConfig** hii inatuwezesha kuona **makosa** ya kwenye **code** tukiwa tunaandika kwenye **console** kabla ya kuanzisha **code** kwa kumulika kosa lakisheria pale litakapo jitokeza, **browserslist** hapa naonyesha **vivinjari** ambavyo na vilenga. 
+
+ Kumbuka kusave Hilo faili. 
+
+Napenda kutenganisha **javascript** na **html** pale inapokua namatiki.  
+
+Tengeneza **directory** nakuipa jina la **public** na ndani ya hiyo directory utaweka faili utakalo lipa jina la **index.html** 
+
+ili kutengeneza **directory** kwenye github  utaandika 
+
+`public/index.html` **github** ikiona jina alafu `/` inatafsiri kwamba hiyo ni **directory** na wala siyo **faili** la kawaida. Kwenye hilo faili utaweka
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />   
+    <meta name="author" content="devduara0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="Kilimo, Ufugaji">
+    <meta
+      name="description"
+      content="Web site created using github and vercel"
+    />  
+
+    <title>Dodosa theme</title>
+  </head>
+
+    <body>
+         <div id="root"></div>
+    </body>
+</html>
+
+``` 
