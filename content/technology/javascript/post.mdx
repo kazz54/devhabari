@@ -269,3 +269,30 @@ ili kutengeneza **directory** kwenye github  utaandika
 </html>
 
 ``` 
+
+Katika hali yakawaida **react** inategemea kuona faili la **index.js** kama unataka kulipa jina jingine itabidi uifahamishe **package.json** 
+
+Faili hili ndilo lina tumika kuonyesha **vipengele** kwenye **DOM "module ya kitu cha hati"**  
+
+Tengeneza hilo faili kwenye directory  ya `src` jina liwe `index.js` 
+
+Utaweka
+```javascript 
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+  <React.StrictMode>
+   <h1>Hello world!</h1>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+kwanza na anzaa na sheria za Es6 kwa **kuagiza maktaba** ya **React** kutokea react alafu na agiza **ReactDOM** kutokea **react-dom** 
+
+Baada ya kuagiza hizo **maktaba** ni wakati waku **zitumia**, ili **kutoa kipengele** cha **react** kwenye **DOM** na pitisha  **ReactDOM.render** na sasisha **dom** iendane na ile ya **react**. 
+
+Wala sisahau kutupia aina flani ya msaidizi **React.StrictMode** ambaye atatusaidia kuandika vipengele  vya react vyenye **ubora** kwakua inatoa **onyo** kwenye **console** pale kunapotokea **ukiukaji** wa **sheria** wakati tunatengeneza **vipengele**. Tukiwa bado tunazungumzia **vipengele** naonyesha **kipengele** cha **hati** ya **hml** kwa kutumia **jsx**, kipengele hiki ndiyo ambacho nataka **react** ikiweke kwenye **DOM**  ili kuweka kwenye **DOM** tunatumia `document.getElementById('root')` msisitizo ukiwa kwenye **“root”** DOM node 
+
+>> Tafsiri yake ni kwamba kwenye kitu cha div ambacho kipo kwenye hati ya html ndiyo tunataka tuone hiki kipengele
