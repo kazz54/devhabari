@@ -34,6 +34,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-postcss`,
     `gatsby-read-time-estimate`,
+    `gatsby-remark-responsive-iframe`,
     {
       resolve: 'gatsby-transformer-remark',
       options: {
