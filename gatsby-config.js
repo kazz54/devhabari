@@ -70,7 +70,7 @@ module.exports = {
       }
     ]
   }
-}
+//}
     
     // {
     //   resolve: 'gatsby-plugin-robots-txt',
