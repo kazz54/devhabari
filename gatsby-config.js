@@ -68,7 +68,7 @@ module.exports = {
           }
         ]
       }
-    };
+    },
     // {
     //   resolve: 'gatsby-plugin-robots-txt',
     //   options: {
@@ -77,7 +77,7 @@ module.exports = {
     //     policy: [{ userAgent: '*', allow: '/' }],
     //   },
     // },
-//}
+//},
     
     // {
     //   resolve: 'gatsby-plugin-robots-txt',
