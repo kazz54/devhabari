@@ -419,7 +419,8 @@ safari hii nikwenye kuweka matamko kwenye ngazi ya kitalu
 kwa kutumia mabano mustachi tunapata wepesi wakuandika javascript kwenye JSX kuathiri 
 vipengle vya html kirahisi ndani ya javasript zingatia jinsi ninavyo pitisha varible na visifa vyake
 kwenye jsx ili kuathiri kipengele cha htm ninacho hitaji `{mtumiaji.theme}` kisifu kikipitisha thamani kathaa kama vile
- backgroundColor na color kupitisha **jina** kama kisifu cha **mtumiaji**  `{mtumiaji.jina}` 
+ backgroundColor na color kupitisha **jina** kama thamani ya **mtumiaji**  `{mtumiaji.jina}` hivyo ndivyo tunavyo weza
+kutumia thamini kutoka kwa **mtumiaji** kwenye kipengele  
 
 
 ```javascript
@@ -451,9 +452,26 @@ export default function TodoList() {
 ```
 
 
+Kama ukitaka kutoa kipengele cha react ndani ya kipele cha kazi 
+utafafanua kipengele kingine nakutoa kama kipengele cha Ht/ml kwa kutumia JSX 
+kwenye kipengele kingine 
+
+```javascript
+function List() {
+  return <Headline />;
+}
+
+function Headline() {
+  const salaam = 'Habar kutoka  Function Component!';
+
+  return <h1>{salaam}</h1>;
+}
+
+export default List;
 
 
-naporudisha jsx napitasha javascript kwenye mabano mustachi **curly bre** 
+```
+
 
 
 
