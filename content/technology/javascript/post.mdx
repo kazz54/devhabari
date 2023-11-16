@@ -418,11 +418,35 @@ kurudisha salaam
 Sheria za Es6 zimetumika kwa mara nyingine tena,
 safari hii nikwenye kuweka matamko kwenye ngazi ya kitalu
 kwa kutumia mabano mustachi tunapata wepesi wakuandika javascript kwenye JSX kuathiri 
-vipengle vya html kirahisi ndani ya javasript zingatia jinsi ninavyo pitisha varible na visifa vyake
-kwenye jsx ili kuathiri kipengele cha htm ninacho hitaji {person.theme} kisifu kikipitisha thamani kathaa kama vile
- backgroundColor na color thamani ya "jina" iliyo pitishwa kwenye kisifa 
+vipengle vya html kirahisi ndani ya javasript 
 
+```javascript
+const person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink'
+  }
+};
 
+export default function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}'s Todos</h1>
+      <img
+        className="avatar"
+        src="https://i.imgur.com/7vQD0fPs.jpg"
+        alt="Gregorio Y. Zara"
+      />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
+```
 
 
 
@@ -442,11 +466,3 @@ This is a beautiful iframe:
 This is a beautiful iframe: is this what you want 
 
  <iframe src="https://codesandbox.io/embed/flamboyant-butterfly-qvlys8" width="600" height="400"></iframe>
-
-
-
-
-
-
-
-
