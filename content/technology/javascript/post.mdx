@@ -337,13 +337,15 @@ Kumbuka tu kwamba **kipengele** cha reat ni **kazi** ya javascript ambayo unawez
 kitaalam tuna sema **Functional Component** ili kuweza kuzielewa...twende kwa vitendo 
 
 
-Anza naku tengeneza faili `List.js` kwenye directory ya `Component` jina unaweza kuita 
+Anza naku tengeneza faili **List.js** kwenye directory ya **Component** jina unaweza kuita 
 chochote ili mradi liwe namantiki kwa wengine watakao soma code zako. 
 
-kwenye file la `App.js` ndipo napotaka kuvipangilia vipengele vyangu alafu kwenye `index.js` nita 
+kwenye file la **App.js** ndipo napotaka kuvipangilia vipengele vyangu alafu kwenye **index.js** nita 
 ita kipengele **App** pekeyake, hii inatoa wepesi wakupangilia vipengele vinavyo tengeneza application
 kuliko kua na faili moja kubwa pale application inavyozidi kua kubwa usimamizi wa hilo faili 
 na ufanisi wa application kwa ujumla inakua ni changamoto.
+
+**App.js**
 
 
 ```javascript
@@ -358,6 +360,40 @@ export default function App() {
   );
 }
 ```
+
+**index.js**
+
+```javascript
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+```
+
+
+Kama tulivyo ona hapo awali **kazi ya kipengele** "Functional Component" ni kazi ya **kipengele cha react** "React Component"
+ambayo **inarudisha JSX**, moja kati yautata uliyoko hasa kama nimgeni na umetoka 
+kwenye ulimwengu wa vanilla html na css ni rahisi kua na ujasiri wa kusubutu 
+kurudisha html badala ya kurudisha jsx na matokeo yake ni kosa lakishiri kujitokeza kwenye kivinjari
+
+**HTML** 
+
+njia iliyo sahihi yakuandika jsx ni hii hapa, angali jinsi kila kipengele kilivyo funguliwa na kufungwa, wakati ambapo
+ningeweza kuweka kila kitu kwenye `<div>` ningeweza nikajikuta natengeneza soup ya **div** ambayo haina mnywaji kuepuka
+hilo natumia Fragment
+
+**JSX**
+
+
 
 
 [embedded example](embedded-codesandbox://s/lingering-river-knq4gs)
