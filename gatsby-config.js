@@ -36,10 +36,11 @@ module.exports = {
     `gatsby-read-time-estimate`,
     //me
     
-   {
+     // `gatsby-transformer-remark`,
+      {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [ `gatsby-remark-responsive-iframe`,
+        plugins: [
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -73,6 +74,7 @@ module.exports = {
         ],
       },
     },
+        
 
     
    // {
