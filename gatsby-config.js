@@ -34,10 +34,51 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-postcss`,
     `gatsby-read-time-estimate`,
-    {
-      resolve: 'gatsby-transformer-remark',
+    //me
+    
+   {
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [ `gatsby-remark-responsive-iframe`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+             classPrefix: "language-",
+             inlineCodeMarker: null, 
+             aliases:{sh: "bash", js:"javascript"},
+             showLineNumbers: false,
+             noInlineHighlight: false,
+             languageExtensions: [
+              {
+                language: "superscript",
+                extend: "javascript",
+                definition: {
+                  superscript_types: /(SuperType)/,
+                },
+                insertBefore: {
+                  function: {
+                    superscript_keywords: /(superif|superelse)/,
+                  },
+                },
+              },
+            ],
+              prompt: {
+              user: "root",
+              host: "localhost",
+              global: false,
+            },
+             escapeEntities: {},  
+          },
+          },
+        ],
+      },
+    },
+
+    
+   // {
+   //   resolve: 'gatsby-transformer-remark',
+    //  options: {
+      //  plugins: [ `gatsby-remark-responsive-iframe`,
           {
             resolve: 'gatsby-remark-embedded-codesandbox',
             options: {
@@ -89,37 +130,7 @@ module.exports = {
     // },
     // {
     // me
-    {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-             classPrefix: "language-",
-             inlineCodeMarker: null, 
-             aliases:{sh: "bash", js:"javascript"},
-             showLineNumbers: false,
-             noInlineHighlight: false,
-             languageExtensions: [
-              {
-                language: "superscript",
-                extend: "javascript",
-                definition: {
-                  superscript_types: /(SuperType)/,
-                },
-                insertBefore: {
-                  function: {
-                    superscript_keywords: /(superif|superelse)/,
-                  },
-                },
-              },
-            ],
-              prompt: {
-              user: "root",
-              host: "localhost",
-              global: false,
-            },
-             escapeEntities: {},  
-          },
-          },
-      
+  
         
     {
       resolve: `gatsby-plugin-purgecss`,
