@@ -119,7 +119,7 @@ module.exports = {
              escapeEntities: {},  
           },
           },
-      },
+      
         
     {
       resolve: `gatsby-plugin-purgecss`,
