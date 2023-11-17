@@ -119,7 +119,6 @@ module.exports = {
              escapeEntities: {},  
           },
           },
-        ],
       },
         
     {
