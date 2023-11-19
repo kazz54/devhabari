@@ -450,16 +450,7 @@ export default List;
 
 ```
 
-
-
-Sheria za Es6 zimetumika kwa mara nyingine tena,
-safari hii nikwenye kuweka matamko kwenye ngazi ya kitalu
-kwa kutumia mabano mustachi tunapata wepesi wakuandika javascript kwenye JSX kuathiri 
-vipengle vya html kirahisi ndani ya javasript zingatia jinsi ninavyo pitisha varible na visifa vyake
-kwenye jsx ili kuathiri kipengele cha htm ninacho hitaji `{mtumiaji.theme}` kisifu kikipitisha thamani kathaa kama vile
- backgroundColor na color kupitisha **jina** kama thamani ya **mtumiaji**  `{mtumiaji.jina}` hivyo ndivyo tunavyo weza
-kutumia thamini kutoka kwa **mtumiaji** kwenye kipengele  
-
+Zichukulie props kama nobe unazotumia kurekibishia sauti, treble, bass n.k
 
 ```javascript
 const mtumiaji = {
@@ -473,21 +464,29 @@ const mtumiaji = {
 export default function TodoList() {
   return (
     <div style={mtumiaji.theme}>
-      <h1>{mtumiaji.jina}'s Todos</h1>
+      <h1>{mtumiaji.jina} Majukumu</h1>
       <img
         className="avatar"
         src="https://i.imgur.com/7vQD0fPs.jpg"
-        alt="Gregorio Y. Zara"
+        alt="Gregorio Y. ju"
       />
       <ul>
-        <li>Improve the videophone</li>
-        <li>Prepare aeronautics lectures</li>
-        <li>Work on the alcohol-fuelled engine</li>
+        <li>Imarisha maabara</li>
+        <li>Andaa lectures kwajili ya kemia</li>
+        <li>Utafiti juu ya sayari</li>
       </ul>
     </div>
   );
 }
 ```
+
+Sheria za Es6 zimetumika kwa mara nyingine tena,
+safari hii nikwenye kuweka variable kwenye ngazi ya kitalu
+kwa kutumia mabano mustachi tunapata wepesi wakuandika javascript kwenye JSX kuathiri 
+vipengle vya html kirahisi ndani ya javasript zingatia jinsi ninavyo pitisha varible na visifa vyake
+kwenye jsx ili kuathiri kipengele cha htm ninacho hitaji `{mtumiaji.theme}` kisifu kikipitisha thamani kathaa kama vile
+ backgroundColor na color kupitisha **jina** kama thamani ya **mtumiaji**  `{mtumiaji.jina}` hivyo ndivyo tunavyo weza
+kutumia thamini kutoka kwa **mtumiaji** kwenye kipengele  
 
 
 
