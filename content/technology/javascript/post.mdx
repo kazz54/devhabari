@@ -413,11 +413,12 @@ kazi ya kipengele ni kurudisha jsx, Sheria za Es6 zimetumika kwenye kazi ambayo 
 imerudishwa kwenye mabano mustachi `{}` **cul brec** kama `{salaam}`
 
 
-props ni tarifa ambazo unazipitisha kwenye jsx,
-vipengele vya react vina tumia props kupitisha data, kipengele ambacho ni mzazi kinatatumia 
-props kupitisha data kwa kipengele mtoto
+**props ni tarifa ambazo unazipitisha kwenye jsx**
 
+vipengele vya react vina tumia props kupitisha data, kipengele ambacho ni mzazi kitatumia 
+props kupitisha data kwa kipengele mtoto na siyo kinyume
 
+kuzielewa props kwa vitendo vingatia
 
 **App.js**
 
@@ -443,7 +444,7 @@ export default App;
 
 ```javascript
 const List = ({ maandishi }) => {
- return <h2>{maandishi}</h2>;
+ return <h2 style={{ color: 'blue', backgroundColor: 'black', }}>{maandishi}</h2>;
 };
 
 export default List;
@@ -480,13 +481,7 @@ export default function TodoList() {
 }
 ```
 
-Sheria za Es6 zimetumika kwa mara nyingine tena,
-safari hii nikwenye kuweka variable kwenye ngazi ya kitalu
-kwa kutumia mabano mustachi tunapata wepesi wakuandika javascript kwenye JSX kuathiri 
-vipengle vya html kirahisi ndani ya javasript zingatia jinsi ninavyo pitisha varible na visifa vyake
-kwenye jsx ili kuathiri kipengele cha htm ninacho hitaji `{mtumiaji.theme}` kisifu kikipitisha thamani kathaa kama vile
- backgroundColor na color kupitisha **jina** kama thamani ya **mtumiaji**  `{mtumiaji.jina}` hivyo ndivyo tunavyo weza
-kutumia thamini kutoka kwa **mtumiaji** kwenye kipengele  
+
 
 
 
