@@ -482,6 +482,40 @@ export default function TodoList() {
 ```
 
 
+```javascript
+import React from "react";
+import List from "./components/List"
+
+
+const App = () => {
+  const salaam = 'Habari kutoka React Props';
+  const [isShow, setShow] = React.useState(true);
+
+  const handleToggle = () => {
+    setShow(!isShow);
+  };
+  return (
+    
+
+<div>
+<button onClick={handleToggle} type="button">
+  Toggle
+</button>
+
+{isShow ? <List maandishi={salaam} /> : null}
+</div>
+  );
+};
+
+export default App;
+  
+
+
+
+
+
+```
+
 
 
 
