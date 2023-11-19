@@ -381,7 +381,7 @@ root.render(
 
 
 Kama tulivyo ona hapo awali **kazi ya kipengele** "Functional Component" ni kazi ya **kipengele cha react** "React Component"
-ambayo **inarudisha JSX**, moja kati yautata uliyoko hasa kama nimgeni na umetoka 
+ambayo **inarudisha JSX**, moja kati yautata uliyoko hasa kama ni mgeni na umetoka 
 kwenye ulimwengu wa vanilla html na css ni rahisi kua na ujasiri wa kusubutu 
 kurudisha html badala ya kurudisha jsx na matokeo yake ni kosa lakishiri kujitokeza kwenye kivinjari
 
@@ -401,20 +401,30 @@ inakulazimu uweke javascript kwenye mabano mustachi `{} `**cul brec**
 
 
 ```javascript
-import React from 'react';
-
-function List() {
-  const salaam = 'Habari Function Component!';
-
-  return <h1>{salaam}</h1>;
-}
+const List = () => {
+  const salaam = 'Habari Arrow Function Component!';
+  return <h2>{salaam}</h2>;
+};
 
 export default List;
 ```
 
-kazi ya kipengele ni kurudisha jsx, Sheria za Es6 zimetumika kwenye kazi ambayo ni tamko la salaam 
-ambayo imerudishwa kwenye mabano mustachi `{}` **cul brec** kama nilivyo fanya
-kurudisha salaam
+kazi ya kipengele ni kurudisha jsx, Sheria za Es6 zimetumika kwenye kazi ambayo ni variable  
+imerudishwa kwenye mabano mustachi `{}` **cul brec** kama `{salaam}`
+
+
+props ni tarifa ambazo unazipitisha kwenye jsx,
+vipengele vya react vina tumia props kupitisha data, kipengele ambacho ni mzazi kinatatumia 
+props kupitisha data kwa kipengele mtoto
+
+
+
+**App.js**
+
+
+**list.js**
+
+
 
 
 Sheria za Es6 zimetumika kwa mara nyingine tena,
@@ -453,6 +463,9 @@ export default function TodoList() {
   );
 }
 ```
+
+
+
 
 
 Kama ukitaka kutoa kipengele cha react ndani ya kipele cha kazi 
