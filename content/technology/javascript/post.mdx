@@ -421,9 +421,34 @@ props kupitisha data kwa kipengele mtoto
 
 **App.js**
 
+```javascript
+import List from "./components/List"
+
+
+const App = () => {
+  const salaam = 'Habari kutoka React Props';
+
+  return (
+    <div>
+      <List maandishi={salaam} />
+    </div>
+  );
+};
+
+export default App;
+
+```
 
 **list.js**
 
+```javascript
+const List = ({ maandishi }) => {
+ return <h2>{maandishi}</h2>;
+};
+
+export default List;
+
+```
 
 
 
