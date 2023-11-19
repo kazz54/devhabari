@@ -453,12 +453,12 @@ export default List;
 
 Zichukulie props kama nobe unazotumia kurekibishia sauti, treble, bass n.k
 
-```javascript
+```javascript',
 const mtumiaji = {
-  jina: 'Gregorio Y. Zara',
+  jina: 'Pablo Pa',
   theme: {
     backgroundColor: 'black',
-    color: 'pink'
+    color: 'blue'
   }
 };
 
@@ -469,7 +469,7 @@ export default function TodoList() {
       <img
         className="avatar"
         src="https://i.imgur.com/7vQD0fPs.jpg"
-        alt="Gregorio Y. ju"
+        alt="Pablo Pa"
       />
       <ul>
         <li>Imarisha maabara</li>
@@ -484,41 +484,6 @@ export default function TodoList() {
 
 
 
-
-
-
-Kama ukitaka kutoa kipengele cha react ndani ya kipele cha kazi 
-utafafanua kipengele kingine nakutoa kama kipengele cha Html kwa kutumia JSX 
-kwenye kipengele kingine 
-
-```javascript
-function List() {
-  return <Headline />;
-}
-
-function Headline() {
-  const salaam = 'Habar kutoka  Function Component!';
-
-  return <h1>{salaam}</h1>;
-}
-
-export default List;
-
-```
-
-
-
-```javascript
- const greeting = 'Habari kutoka Function Component!';
-
-  return <Headline value={salaam} />;
-}
-
-function Headline(props) {
-  return <h1>{props.value}</h1>;
-}
-
-```
 
 
 
