@@ -387,17 +387,47 @@ kurudisha html badala ya kurudisha jsx na matokeo yake ni kosa lakishiri kujitok
 
 **HTML** 
 
+```html
+    // Hii haitafanya kazi!
+    <h1>Mambo ya kufanya Pablo Pa</h1>
+    <img
+      src="" 
+      alt="pablo pa" 
+      class="test"
+    >
+    <ul>
+       <li>Imarisha maabara
+        <li>Andaa lectures kwa ajili ya kemia
+        <li>Utafiti juu ya sayari
+    </ul>
+```
+
 njia iliyo sahihi yakuandika jsx ni hii hapa, angali jinsi kila kipengele kilivyo funguliwa na kufungwa, wakati ambapo
 ningeweza kuweka kila kitu kwenye `<div>` ningeweza nikajikuta natengeneza soup ya **div** ambayo haina mnywaji kuepuka
-hilo natumia Fragment `<> </>` na hii ni kwa sababu Jsx nyuma yapazia inabadilishwa nakua kitu cha javascript hauwezi kurudisha vitu 
-viwili kutoka kwenye kazi bila kufunga kwenye array "safu" kwa hoja hii huwezi kurudisha tag mbili za jsx bila kuzifunga kwenye tag
+hilo natumia **Fragment** `<> </>` na hii ni kwa sababu **Jsx** nyuma yapazia inabadilishwa nakua **kitu cha javascript** hauwezi kurudisha vitu viwili kutoka kwenye kazi bila kufunga kwenye **array** "safu" kwa hoja hii huwezi kurudisha tag mbili za jsx bila kuzifunga kwenye tag
 nyingine au Fragment
 
 
 **JSX**
 
+```html
+<>
+    <h1>Mambo ya kufanya Pablo Pa</h1>
+    <img
+      src="" 
+      alt="pablo pa" 
+      class="test"
+    />
+    <ul>
+       <li>Imarisha maabara</li>
+        <li>Andaa lectures kwa ajili ya kemia</li>
+        <li>Utafiti juu ya sayari</li>
+    </ul>
+    </>
+```
+
 kwavile vipegele vya react nikazi za javascript, kurudisha javascript kwenye JSX
-inakulazimu uweke javascript kwenye mabano mustachi `{} `**cul brec** 
+inakulazimu uweke javascript kwenye mabano mustachi `{} `**curly brackets** 
 
 
 ```javascript
@@ -410,7 +440,7 @@ export default List;
 ```
 
 kazi ya kipengele ni kurudisha jsx, Sheria za Es6 zimetumika kwenye kazi ambayo ni variable  
-imerudishwa kwenye mabano mustachi `{}` **cul brec** kama `{salaam}`
+imerudishwa kwenye mabano mustachi `{}` kama `{salaam}`
 
 
 **props ni tarifa ambazo unazipitisha kwenye jsx**
@@ -440,7 +470,7 @@ export default App;
 
 ```
 
-**list.js**
+**List.js**
 
 ```javascript
 const List = ({ maandishi }) => {
@@ -451,7 +481,7 @@ export default List;
 
 ```
 
-Zichukulie props kama nobe unazotumia kurekibishia sauti, treble, bass n.k
+Zichukulie props kama nob unazotumia kurekibishia sauti, treble, bass n.k
 
 ```javascript',
 const mtumiaji = {
