@@ -341,8 +341,55 @@ ambazo ni za hali ya juu **mwingiliano** unakua mkubwa na **hali** hubadilika ma
 
 kutatua changamoto hii tengeneza branch kwenye hii rapasatory kwa kufanya hivi
 
+![github_branch](https://i.ibb.co/KDgxQSx/github-branch.png)
+
+Bilashaka unaona kitu kamahiki, sasa twende tukafanye marekebisho kwenye code
+
+![github_branch](https://i.ibb.co/L9rL2QY/github-branch-dev.png)
+
+sasisha faili la index.js nauweke, ukimaliza bofya hapo palipo andikwa **commit changes**
+
+```javascript
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <h1> Hello world!</h1>
+  </StrictMode>
+);
+```
+
+sasa hivi tuna matoleo mawili ambayo tumesha ya peleka **deployments** nayo ni **production** na **preview**, 
+**prieview** ikiwa inatokana na **tawi** la **dev** ambayo hasa ni nakala ya tawi la **main** 
+
+ili kuhakikisha tawi letu ambalo liko kazini kiuzalishaji zaidi linakwenda sawa na tawi
+lamajaribio nililon liita **dev** nitayalinga nisha mata haya na kulivuta lile lilo jipya kuliko mwezaka
+kwa kufanya hivi bofya hapo palipo andikwa **compare & pull request**
+
+![github_pull_req](https://i.ibb.co/kq8r5rQ/github-compare-andpull.png)
+
+Utaendelea nakubofya hapo palipo andikwa **create pull request**
+
+![github_creat_pull_req]https://i.ibb.co/qdjB71V/github-creat-pul-req.png[/img]
+
+Utaendelea naku unganisha **Merge**
+
+![github_mergpull_req](https://i.ibb.co/qBp6ckH/github-merge-pull-req.png)
 
 
+**thibitisha kuunganisha na mara baada ya kuthibisha ukirudi kwenye code ukiwa kwenye 
+tawi kuu **main** haitakuwa na utofauti na ile ya **dev**
+
+
+
+
+
+
+**React Virtual Dom**
 
 
 Baada ya **DOM** kutubainikia na **JSX** kujitokeza ingependeza kama tunge viangalia vipengele vya react 
