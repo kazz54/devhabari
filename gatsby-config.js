@@ -24,7 +24,6 @@ module.exports = {
     twitterUsername: '',
     defaultTitle: 'Devduara',
   },
-  },
 
   plugins: [
     `gatsby-plugin-netlify`,
