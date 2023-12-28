@@ -27,7 +27,7 @@ const Recent = () => {
     <SidebarCard>
       <Wrapper>
         <Title title="Our Partners" />
-        <p>Building an open internet together.</p>
+        <p>Tujenge mtandao wa internet pamoja.</p>
         {partners.map(partner => {
           return (
             <div key={partner.name} className="partner">
