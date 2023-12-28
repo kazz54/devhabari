@@ -14,15 +14,16 @@ require('dotenv').config({
 module.exports = {
   pathPrefix: `/`,
   siteMetadata: {
-    title: 'Revista',
+    title: 'Devduara0',
     titleTemplate: '',
     // titleTemplate: "%s - Curated List of Free Education Resources",
     description:
-      'Revista is an open source blog/magazine template. Simply write articles in Markdown, place in the content folder, and Revista will automatically create categories and articles!',
-    url: 'https://revista.mesmerdesign.ca', // No trailing slash allowed!
+      'Devduara0 ni jarida la tekinologia 
+      //Simply write articles in Markdown, place in the content folder, and Revista will automatically create categories and articles!',
+    url: '', // No trailing slash allowed!
     image: '/logo.png', // Path to the image placed in the 'static' folder, in the project's root directory.
     twitterUsername: '',
-    defaultTitle: 'Revista',
+    defaultTitle: 'Devduara',
   },
 
   plugins: [
