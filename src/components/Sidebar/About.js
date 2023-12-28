@@ -10,7 +10,7 @@ const About = () => {
   return (
     <SidebarCard>
       <Wrapper>
-        <Title title="Who We Are" />
+        <Title title="Kuhusu Sisi" />
         <StaticImage
           src="../../assets/logo.png"
           layout="fixed"
