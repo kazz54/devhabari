@@ -5,12 +5,12 @@ const Links = ({ styleClass, children }) => {
     <ul className={styleClass}>
       <li>
         <Link to="/" className="page-link">
-          Home
+          Nyumbani
         </Link>
       </li>
       <li>
         <Link to="/about" className="page-link">
-          About
+          Sisi
         </Link>
       </li>
       <li>
@@ -20,7 +20,7 @@ const Links = ({ styleClass, children }) => {
       </li>
       <li>
         <Link to="/contact" className="page-link">
-          Contact
+          Wasiliana nasi
         </Link>
       </li>
     </ul>
