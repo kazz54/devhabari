@@ -17,13 +17,13 @@ module.exports = {
     title: 'Devduara0',
     titleTemplate: '',
     // titleTemplate: "%s - Curated List of Free Education Resources",
-    description:
-      'Devduara0 ni jarida la tekinologia 
-      //Simply write articles in Markdown, place in the content folder, and Revista will automatically create categories and articles!',
-    url: '', // No trailing slash allowed!
+     description:
+      'Devduara ni jarida la tekinologia',
+    url: 'https://revista.mesmerdesign.ca', // No trailing slash allowed!
     image: '/logo.png', // Path to the image placed in the 'static' folder, in the project's root directory.
     twitterUsername: '',
     defaultTitle: 'Devduara',
+  },
   },
 
   plugins: [
