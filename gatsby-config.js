@@ -22,7 +22,7 @@ module.exports = {
     url: 'https://revista.mesmerdesign.ca', // No trailing slash allowed!
     image: '/logo.png', // Path to the image placed in the 'static' folder, in the project's root directory.
     twitterUsername: '',
-    defaultTitle: 'Devduara',
+    defaultTitle: 'Devduara0',
   },
 
   plugins: [
