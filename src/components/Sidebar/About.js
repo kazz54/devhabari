@@ -20,7 +20,6 @@ const About = () => {
           className="img"
         />
         <p>Pata makala zabura kabisa zenye mafunzo kwenye topic mbali mbali uzipendazo.</p>
-        <p>Revista is free and open-source forever.</p>
         <SocialLinks className="sidebar-icons" />
       </Wrapper>
     </SidebarCard>
