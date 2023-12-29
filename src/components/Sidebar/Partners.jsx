@@ -26,7 +26,7 @@ const Recent = () => {
   return (
     <SidebarCard>
       <Wrapper>
-        <Title title="Our Partners" />
+        <Title title="Washirika wetu" />
         <p>Tujenge mtandao wa internet pamoja.</p>
         {partners.map(partner => {
           return (
