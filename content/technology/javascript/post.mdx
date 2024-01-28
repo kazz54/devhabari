@@ -500,24 +500,48 @@ nyingine au **Fragment**
     </ul>
     </>
 ```
+### React Function Component
 
+*react kipengele cha kazi*
+
+Utambulisho wa kipengele huanza na kazi ya javascript ambayo lazime irudishe **JSX**,
 kwavile vipegele vya react nikazi za javascript, 
 kurudisha javascript kwenye JSX
 inakulazimu uweke javascript kwenye mabano mustachi `{} `**curly brackets** 
 
+Sheria za Es6 zimetumika kwenye kazi ambayo ni variable 
+imerudishwa kwenye mabano mustachi `{}` kama `{salaam}`
+
+**List.js**
 
 ```javascript
-const List = () => {
-  const salaam = 'Habari Arrow Function Component!';
+function List() {
+  const salaam = "Salam kutoka Function Component!";
+
   return <h2>{salaam}</h2>;
-};
+}
 
 export default List;
 ```
+ilikutoa kipengele cha react ndani ya kipengele cha kazi "Fuction component"
+utafafanua kipengele kingine nakutoa kama kipengele cha HTML kwa kutumia jsx
+wepesi huu unakuwezesha kuwa na maamuzi ya jinsi na wapi pakutoa kipengele cha react
 
-kazi ya kipengele ni kurudisha jsx, Sheria za Es6 zimetumika kwenye kazi ambayo ni variable 
-imerudishwa kwenye mabano mustachi `{}` kama `{salaam}`
+**App.js**
 
+```javascript
+import "./styles.css";
+import List from "./components/List";
+export default function App() {
+  return (
+    <div className="App">
+      <List />
+    </div>
+  );
+}
+
+```
+### React Function Component: props
 
 **props ni tarifa ambazo unazipitisha kwenye jsx**
 
@@ -586,6 +610,24 @@ export default function TodoList() {
   );
 }
 ```
+
+### React Arrow Function Component
+
+*React kipengele cha kazi ya mkuki*
+
+Kwenye Es6 Arrow Function Component ndipo zilipo ibuka 
+ikimanisha kazi za javascript tunaweza kuzionyesha kama `lambda` "kazi ya mkuki" (arrow function) 
+
+
+```javascript
+const List = () => {
+  const salaam = 'Habari Arrow Function Component!';
+  return <h2>{salaam}</h2>;
+};
+
+export default List;
+```
+
 
 
 ```javascript
