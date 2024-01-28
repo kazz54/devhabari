@@ -627,6 +627,28 @@ const List = () => {
 
 export default List;
 ```
+*Katika hali ya kawaida mtumiaji wa hii application hana namna yoye ile
+yakuingiliana na application nakubadilisha hiyo variable ya `salaam`*
+
+
+vipengele vyote tulivyo viona mpaka sasa havina hali **state** au kitaalamu tunasema ni **stateless component**
+vinapokea kilichojanzwa kama **props** nakukitoa kama **jsx**, na hii inawezekana kama kilichojanzwa kipo kama **props**
+aina hii ya vipengele hua haifiki hifadhi iliyo kuwepo kwenye kivinjari
+mara nyingi vitu vingine kwenye screen hubadilika kutokana na kile alichojaza mtumiaji na hapa ndipo
+React hooks zipo kua natija kwani tunaweza kutumia hali **state** kwenye **Function Components**
+
+
+```javascript
+import React, { useState } from "react";
+const List = () => {
+  const [salaam, setSalaam] = useState("Habari kutokaFunction Component!");
+
+  return <h2>{salaam}</h2>;
+};
+
+export default List;
+```
+
 
 
 
