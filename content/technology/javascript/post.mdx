@@ -415,10 +415,30 @@ kitaalam tuna sema **Functional Component** ili kuweza kuzielewa...twende kwa vi
 Anza naku tengeneza faili **List.js** kwenye directory ya **Component** jina unaweza kuita 
 chochote ili mradi liwe namantiki kwa wengine watakao soma code zako. 
 
+**List.js**
+
+```javascript
+
+function List() {
+  return (
+    <>
+      <img
+        class="img-fluid"
+        src="https://source.unsplash.com/cZkdauWij50/200x200"
+      />
+    </>
+  );
+}
+
+export default List;
+```
+
 kwenye file la **App.js** ndipo napotaka kuvipangilia vipengele vyangu alafu kwenye **index.js** nita 
 ita kipengele **App** pekeyake, hii inatoa wepesi wakupangilia vipengele vinavyo tengeneza application
 kuliko kua na faili moja kubwa pale application inavyozidi kua kubwa usimamizi wa hilo faili 
 na ufanisi wa application kwa ujumla inakua ni changamoto.
+
+*Kumbuka tukwambwa hii inatofa fura yakutumi kipengele kimoja mara kadhaa kwa jinsi unavyo hitaji*
 
 **App.js**
 
@@ -431,6 +451,8 @@ export default function App() {
   return (
     <div className="App">
       <List />
+      <List />
+     <List />
     </div>
   );
 }
@@ -485,7 +507,7 @@ nyingine au **Fragment**
 
 **JSX**
 
-```html
+```javascript
 <>
     <h1>Mambo ya kufanya Pablo Pa</h1>
     <img
