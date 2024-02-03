@@ -613,6 +613,35 @@ export default function List() {
 }
 ```
 
+
+
+```
+function Item({ jina, isSiyosayari }) {
+  return (
+    <li className="item">
+      {jina} {isSiyosayari && "✔"}
+    </li>
+  );
+}
+
+export default function List() {
+  return (
+    <section>
+      <h1>Zifwatazo siyo sayari</h1>
+      <ul>
+        <Item isSiyosayari={true} jina="Obirt" />
+        <Item isSiyosayari={true} jina="Galaxy" />
+        <Item isSiyosayari={false} jina="Uranus" />
+      </ul>
+    </section>
+  );
+}
+
+
+```
+
+
+
 ### React Arrow Function Component
 
 *React kipengele cha kazi ya mkuki*
