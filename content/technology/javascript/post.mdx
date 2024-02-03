@@ -584,26 +584,29 @@ Zichukulie props kama nob unazotumia kurekibishia sauti, treble, bass n.k
 
 ```javascript',
 const sayari = {
-  jina: 'venus',
+  jina: "venus",
   theme: {
-    backgroundColor: 'white',
-    color: 'blue'
-  }
+    backgroundColor: "white",
+    color: "blue",
+  },
 };
 
-export default function TodoList() {
+export default function List() {
   return (
     <div style={sayari.theme}>
-      <h1>{sayari.jina} Majukumu</h1>
+      <h1>Elimu ya Sayari na Sayansi ya Vimondo</h1>
+
       <img
         className="avatar"
         src="https://source.unsplash.com/88BMUbQHGlQ/200x200"
         alt="venus"
       />
       <ul>
-        <li>Imarisha maabara</li>
-        <li>Andaa lectures kwajili ya kemia</li>
-        <li>Utafiti juu ya sayari</li>
+        <li>{sayari.jina} ni sayari yapili kutoka kwenye jua</li>
+        <li>Ni ya sita kwa ukubwa</li>
+        <li>
+          Ndiyo sayari yenyo joto kuliko sayari zote kwenye mfumo wa sayari
+        </li>
       </ul>
     </div>
   );
