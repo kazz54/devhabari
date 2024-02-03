@@ -512,6 +512,7 @@ nyingine au **Fragment**
 **JSX**
 
 ```javascript
+// Hii itafanya kazi!
 <>
     <h1>Elimu ya Sayari na Sayansi Vimondo</h1>
     <img
@@ -528,49 +529,23 @@ nyingine au **Fragment**
 ```
 
 
-Utambulisho wa kipengele huanza na kazi ya javascript ambayo lazime irudishe **JSX**,
-kwavile vipegele vya react nikazi za javascript, 
-kurudisha javascript kwenye JSX
-inakulazimu uweke javascript kwenye mabano mustachi `{} `**curly brackets** 
 
-Sheria za Es6 zimetumika kwenye kazi ambayo ni variable 
-imerudishwa kwenye mabano mustachi `{}` kama `{salaam}`
-
-**List.js**
-
-```javascript
-function List() {
-  const salaam = "Salam kutoka Function Component!";
-
-  return <h2>{salaam}</h2>;
-}
-
-export default List;
-```
-ilikutoa kipengele cha react ndani ya kipengele cha kazi "Fuction component"
-utafafanua kipengele kingine nakutoa kama kipengele cha HTML kwa kutumia jsx
-wepesi huu unakuwezesha kuwa na maamuzi ya jinsi na wapi pakutoa kipengele cha react
-
-**App.js**
-
-```javascript
-import "./styles.css";
-import List from "./components/List";
-export default function App() {
-  return (
-    <div className="App">
-      <List />
-    </div>
-  );
-}
-
-```
 ### React Function Component: props
 
 **props ni tarifa ambazo unazipitisha kwenye jsx**
 
+Utambulisho wa **kipengele** huanza na kazi ya javascript ambayo lazime irudishe **JSX**,
+kwavile vipegele vya react nikazi za javascript, 
+kurudisha javascript kwenye JSX
+inakulazimu uweke javascript kwenye mabano mustachi `{} `**curly brackets** 
 vipengele vya react vina tumia **props** kupitisha data, kipengele ambacho ni mzazi kitatumia 
 props kupitisha data kwa kipengele mtoto na siyo kinyume
+
+Sheria za Es6 zimetumika kwenye kazi ambayo ni variable 
+imerudishwa kwenye mabano mustachi `{}` kama `{salaam}`
+
+
+
 
 kuzielewa props kwa vitendo zingatia
 
@@ -608,22 +583,22 @@ export default List;
 Zichukulie props kama nob unazotumia kurekibishia sauti, treble, bass n.k
 
 ```javascript',
-const mtumiaji = {
-  jina: 'Pablo Pa',
+const sayari = {
+  jina: 'venus',
   theme: {
-    backgroundColor: 'black',
+    backgroundColor: 'white',
     color: 'blue'
   }
 };
 
 export default function TodoList() {
   return (
-    <div style={mtumiaji.theme}>
-      <h1>{mtumiaji.jina} Majukumu</h1>
+    <div style={sayari.theme}>
+      <h1>{sayari.jina} Majukumu</h1>
       <img
         className="avatar"
-        src="https://i.imgur.com/7vQD0fPs.jpg"
-        alt="Pablo Pa"
+        src="https://source.unsplash.com/88BMUbQHGlQ/200x200"
+        alt="venus"
       />
       <ul>
         <li>Imarisha maabara</li>
