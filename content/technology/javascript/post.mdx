@@ -490,7 +490,7 @@ kurudisha html badala ya kurudisha jsx na matokeo yake ni kosa lakishiri kujitok
 
 ```html
     // Hii haitafanya kazi!
-    <h1>Elimu ya Sayari na Sayansi Vimondo</h1>
+    <h1>Elimu ya Sayari na Sayansi ya Vimondo</h1>
     <img
       src="https://source.unsplash.com/2W-QWAC0mzI/200x200" 
       alt="saturn" 
@@ -514,7 +514,7 @@ nyingine au **Fragment**
 ```javascript
 // Hii itafanya kazi!
 <>
-    <h1>Elimu ya Sayari na Sayansi Vimondo</h1>
+    <h1>Elimu ya Sayari na Sayansi ya Vimondo</h1>
     <img
       src="https://source.unsplash.com/2W-QWAC0mzI/200x200" 
       alt="saturn" 
@@ -612,7 +612,7 @@ export default function List() {
   );
 }
 ```
-*Chukua tip conditionally render*
+*Chukua dondoo conditionally render*
 
 Kunawakati utahitaji kipengele chako kionyeshe vitu tofauti kutokana na mashariti flani. 
 Kwenye react unaweza kutoa kwa **mashariti** "conditionally" jsx kwa kutumia sheria za **javascript operators**
@@ -645,7 +645,7 @@ export default function List() {
 
 ```
 
-*Chukua tip kutoa Orotha*
+*Chukua dondoo kutoa Orotha*
 
 Kunawakati utahitaji kuonyesha vipenge vingi vinavyo fuanana kutoka katika mkusanyiko wa data,
 hapa ndipo `filter()` na `map()` zinapo ingia. Na react ita "chuja" na "kubadilisha" array ya data nakua array ya kipengele    
@@ -654,6 +654,36 @@ Kwenye kila kitu cha `array` utahitaji uweke `key` **"funguo"**. Mara nying utah
 kama **funguo**. Funguo zinawezesha react iweze kufuatili kila kitu kilicho wekwa kwenye orotha hatakama orotha itabadilika 
 
 
+**List.js**
+
+```javascript
+
+import { planets } from "./data.js";
+import { getImageUrl } from "./utils.js";
+
+export default function List() {
+  const listItems = planets.map((sayari) => (
+    <li key={sayari.id}>
+      <img src={getImageUrl(sayari)} alt={sayari.jina} />
+
+      <p>
+        Jina la sayari <b>{"" + sayari.jina}</b>
+      </p>
+      <p>alama {" " + sayari.alama + " "}</p>
+      <p>
+        imeitwa jina la <b>{sayari.chimbuko}</b>
+      </p>
+      <p>{sayari.mgunduzi}</p>
+    </li>
+  ));
+  return (
+    <article>
+      <h1>Elimu ya Sayari na Sayansi ya Vimondo</h1>
+      <ul>{listItems}</ul>
+    </article>
+  );
+}
+```
 
 
 
