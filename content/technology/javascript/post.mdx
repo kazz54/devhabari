@@ -657,12 +657,11 @@ kama **funguo**. Funguo zinawezesha react iweze kufuatili kila kitu kilicho wekw
 **List.js**
 
 ```javascript
-
 import { planets } from "./data.js";
 import { getImageUrl } from "./utils.js";
 
 export default function List() {
-  const listItems = planets.map((sayari) => (
+  const orodhaVitu = planets.map((sayari) => (
     <li key={sayari.id}>
       <img src={getImageUrl(sayari)} alt={sayari.jina} />
 
@@ -679,10 +678,12 @@ export default function List() {
   return (
     <article>
       <h1>Elimu ya Sayari na Sayansi ya Vimondo</h1>
-      <ul>{listItems}</ul>
+      <ul>{orodhaVitu}</ul>
     </article>
   );
 }
+
+
 ```
 
 
