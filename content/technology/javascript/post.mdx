@@ -745,48 +745,6 @@ Unaweza ukasubutu kutengeneza album ya picha
 na pale utakapo bofya kitufe cha `nyingine` unategemea
 picha ibadilike kwa sababu react inasadia kwenye mwingiliano
 
-*lakini niyaje?*
-
-<iframe src="https://codesandbox.io/embed/dank-frog-y9hs59" width="600" height="400"></iframe>
-
-
-**Data zibaki kipengele kinapotolewa tena**
-
-**React iweze kutoa tena kipengele kikiwa na data**
-
-
-vipengele vyote tulivyo viona mpaka sasa havina hali **state** au kitaalamu tunasema ni **stateless component**
-vinapokea kilichojanzwa kama **props** nakukitoa kama **jsx**, na hii inawezekana kama kilichojanzwa kipo kama **props**
-aina hii ya vipengele hua haifiki hifadhi iliyo kuwepo kwenye kivinjari
-mara nyingi vitu vingine kwenye screen hubadilika kutokana na kile alichojaza mtumiaji na hapa ndipo
-**React hooks** zipo kua natija kwani tunaweza kutumia hali **state** kwenye **Function Components**
-
-Kwa kutumia ndoana **hooks** kwenye react tunaweza kutatua hii changamota 
-
-**kuweza kuhifadhi data pale kipengele kinapotolewa tena** 
-
-**react iweze kutoa data mpya pale kipengele kinapo tolewa tena**
-
-
-
-<iframe src="https://codesandbox.io/embed/strange-cdn-896mfq" width="600" height="400"></iframe>
-
-
-
-
-
-
-```javascript
-import React, { useState } from "react";
-const List = () => {
-  const [salaam, setSalaam] = useState("Habari kutokaFunction Component!");
-
-  return <h2>{salaam}</h2>;
-};
-
-export default List;
-```
-
 
 
 **data.js**
@@ -909,6 +867,95 @@ export default function List() {
   );
 }
 ```
+
+
+
+*lakini niyaje?*
+
+<iframe src="https://codesandbox.io/embed/dank-frog-y9hs59" width="600" height="400"></iframe>
+
+
+**Data zibaki kipengele kinapotolewa tena**
+
+**React iweze kutoa tena kipengele kikiwa na data**
+
+
+vipengele vyote tulivyo viona mpaka sasa havina hali **state** au kitaalamu tunasema ni **stateless component**
+vinapokea kilichojanzwa kama **props** nakukitoa kama **jsx**, na hii inawezekana kama kilichojanzwa kipo kama **props**
+aina hii ya vipengele hua haifiki hifadhi iliyo kuwepo kwenye kivinjari
+mara nyingi vitu vingine kwenye screen hubadilika kutokana na kile alichojaza mtumiaji na hapa ndipo
+**React hooks** zipo kua natija kwani tunaweza kutumia hali **state** kwenye **Function Components**
+
+Kwa kutumia ndoana **hooks**, nahasa niseme `useState` **hook** kwenye react tunaweza kutatua hii changamota 
+
+**kuweza kuhifadhi data pale kipengele kinapotolewa tena** 
+
+*hii inawezekana kwa kuhifadhi kwenye kumbukumbu "variable" ya "hali"*
+
+**react iweze kutoa data mpya pale kipengele kinapo tolewa tena**
+
+*hii inawezekana kwa sababu hali inaweka kazi yaku sasisha kumbukumbu "variable" nakufanya react iweze kutoa tena kipengele*
+
+kuitumia ndoana hii kwenye faile la **List.js** nita anza na kuigazi kutokea kwenye react kama hivi
+
+```javascript
+import { useState } from 'react';
+```
+badili
+
+```javascript
+let index = 0;
+````
+
+nakuwa
+
+```javascript
+const [index, setIndex] = useState(0);
+```
+
+**index** ni kumbukumbu ya hali **setIndex** nikazi ya kuweka
+unapo ita `useState` unataka react ikumbuke kitu nahapa ni `index`
+
+Kwa kawaida pair hizi huandikwa  `const [kitu, setwekakitu]`
+
+nahayo mabano `[  ]` ni sheria zinazojulikana kama **array destructuring** zinatuwezesha kusoma thamani kwenye array,
+array inayo rudishwa na `useState` ina hivyo vitu viwili.
+
+
+
+Nahivi ndivyo zinavyo fanya kazi kwa paboja kwenye hii kazi inayo shughulikia kubofya
+
+```javascript
+function handleClick() {
+  setIndex(index + 1);
+}
+```
+
+Kwa mabadiliko hayo kubofya Nyingine kunatakiwa kuonyeshe picha nyingine 
+
+
+<iframe src="https://codesandbox.io/embed/strange-cdn-896mfq" width="600" height="400"></iframe>
+
+
+
+
+
+
+
+
+```javascript
+import React, { useState } from "react";
+const List = () => {
+  const [salaam, setSalaam] = useState("Habari kutokaFunction Component!");
+
+  return <h2>{salaam}</h2>;
+};
+
+export default List;
+```
+
+
+
 
 
 
