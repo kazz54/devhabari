@@ -936,7 +936,14 @@ Kwa mabadiliko hayo kubofya Nyingine kunatakiwa kuonyeshe picha nyingine
 
 <iframe src="https://codesandbox.io/embed/strange-cdn-896mfq" width="600" height="400"></iframe>
 
-
+kujibu swali ni aje, nikama hivi....
+**Kipengele kita tolewa kwa mara ya kwanza:** kwa vile umeweka 0 kwenye `useState` 
+kama thamani ya awali kwenye `index` itarudisha `[0 setIndex]`. React ina kumbuka 0
+Kama thamani ya hali yake mpya.
+**Una sasisha hali:** Mtumiaji anapo bofya kitufe itaita
+`setIndex(index + 1)`. `index` ni 0 kwa hiyo  `setIndex(1)` hii ina iyambia react ikumbuke kwamba `index` ni 1 kwa sasa itakapo gundua inahitaji 
+**kutoa tena kipengele kwa mara ya pili:** react itaona `useState(0)` lakini kwa vile react inakumbuka kwamba `index` ni 1 itarudisha [1, setIndex]
+nakuendelea
 
 
 
