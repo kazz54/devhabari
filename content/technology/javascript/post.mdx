@@ -937,73 +937,67 @@ Kwa mabadiliko hayo kubofya Nyingine kunatakiwa kuonyeshe picha nyingine
 <iframe src="https://codesandbox.io/embed/strange-cdn-896mfq" width="600" height="400"></iframe>
 
 kujibu swali ni aje, nikama hivi....
+
 **Kipengele kita tolewa kwa mara ya kwanza:** kwa vile umeweka 0 kwenye `useState` 
 kama thamani ya awali kwenye `index` itarudisha `[0 setIndex]`. React ina kumbuka 0
 Kama thamani ya hali yake mpya.
+
 **Una sasisha hali:** Mtumiaji anapo bofya kitufe itaita
 `setIndex(index + 1)`. `index` ni 0 kwa hiyo  `setIndex(1)` hii ina iyambia react ikumbuke kwamba `index` ni 1 kwa sasa itakapo gundua inahitaji 
+
 **kutoa tena kipengele kwa mara ya pili:** react itaona `useState(0)` lakini kwa vile react inakumbuka kwamba `index` ni 1 itarudisha [1, setIndex]
 nakuendelea
 
 
+Unaweza kuwa na kumbukumbu **varible** ya hali zaidi ya moja kama hali hazihusiani, 
+angali jinsi ni navyo ongeza **kumbukumbu** nyingine ya hali kwajili yakuonyesha zaidi.
+pale mtumiaji atakapo bofya kitufe cha kusoma zaidi
 
 
 
-
-```javascript
-import React, { useState } from "react";
-const List = () => {
-  const [salaam, setSalaam] = useState("Habari kutokaFunction Component!");
-
-  return <h2>{salaam}</h2>;
-};
-
-export default List;
-```
-
-
-
-
-
-
-
-
-
-
+**List.js**
 
 ```javascript
-import React from "react";
-import List from "./components/List"
 
+import { useState } from "react";
+import { planets } from "./data.js";
 
-const App = () => {
-  const salaam = 'Habari kutoka React Props';
-  const [isShow, setShow] = React.useState(true);
+export default function List() {
+  const [index, setIndex] = useState(0);
+  const [onyeshaZaidi, setOnyeshaZaidi] = useState(false);
 
-  const handleToggle = () => {
-    setShow(!isShow);
-  };
+  function handleClick() {
+    setIndex(index + 1);
+  }
+
+  function handleMoreClick() {
+    setOnyeshaZaidi(!onyeshaZaidi);
+  }
+
+  let sayari = planets[index];
   return (
-    
-
-<div>
-<button onClick={handleToggle} type="button">
-  Toggle
-</button>
-
-{isShow ? <List maandishi={salaam} /> : null}
-</div>
+    <>
+      <h1>Elimu ya Sayari na Sayansi ya Vimondo</h1>
+      <button onClick={handleClick}>Nyingine</button>
+      <h2>
+        <i>{sayari.jina} </i>
+        alama {sayari.alama}
+      </h2>
+      <h3>
+        ({index + 1} of {planets.length})
+      </h3>
+      <button onClick={handleMoreClick}>
+        {onyeshaZaidi ? "Ficha" : "Onyesha"} zaidi
+      </button>
+      <img src={sayari.url} alt={sayari.alt} />
+      {onyeshaZaidi && <p>{sayari.maelezo}</p>}
+    </>
   );
-};
-
-export default App;
-  
-
-
-
-
+}
 
 ```
+
+
 
 
 
@@ -1018,11 +1012,6 @@ This is a beautiful iframe:
 <iframe src="https://codesandbox.io/embed/lingering-river-knq4gs" width="600" height="400"></iframe>
 
 
-
-
-
-
->
 
 
 
