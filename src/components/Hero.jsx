@@ -31,57 +31,7 @@ const Hero = () => {
             </h1>
             <p>Mazungumzo Ya Technohama Na Mifumoyake</p>
           </div>
-          <div className="col-lg-5 col-12">
-            <div className="hero-categories">
-              {categories.map((category, index, arr) => {
-                //check if last element. If it is, custom link for "All Categories"
-                if (arr.length - 1 === index) {
-                  const categoryStyles = {
-                    boxShadow: `0 0 40px`,
-                    backgroundColor: category.color,
-                    color: category.color,
-                  }
-
-                  return (
-                    <Link
-                      style={categoryStyles}
-                      className="hero-category"
-                      key={index}
-                      to={`/categories`}
-                    >
-                      <div className="overlay">
-                        <div className="category-text-color">
-                          {category.category}
-                        </div>
-                      </div>
-                    </Link>
-                  )
-                } else {
-                  const categoryStyles = {
-                    boxShadow: `0 0 40px`,
-                    backgroundColor: category.color,
-                    color: category.color,
-                  }
-
-                  return (
-                    <Link
-                      style={categoryStyles}
-                      className="hero-category"
-                      key={index}
-                      to={`/${slugify(category.category).toLowerCase()}`}
-                    >
-                      <div className="overlay">
-                        <div className="category-text-color">
-                          {category.category}
-                        </div>
-                      </div>
-                    </Link>
-                  )
-                }
-              })}
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
     </HeroStyles>
   )
