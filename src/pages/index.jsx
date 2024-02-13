@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/Hero'
+//import Hero from '../components/Hero'
 import Layout from '../components/Layout'
 import RecentPosts from '../components/RecentPosts'
 import { graphql } from 'gatsby'
@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
         description={metadata.description.substr(0, 160)}
       />
 
-      <Hero />
+      
 
       <Featured />
       <Notification />
