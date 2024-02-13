@@ -2,6 +2,8 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Seo from '../components/SEO'
 import ContactForm from '../components/ContactForm'
+import AboutUs from '../components/About/AboutUs'
+import Vision from '../components/About/Vision'
 
 const contact = () => {
   return (
