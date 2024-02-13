@@ -8,16 +8,7 @@ const Links = ({ styleClass, children }) => {
           Nyumbani
         </Link>
       </li>
-      <li>
-        <Link to="/about" className="page-link">
-          Sisi
-        </Link>
-      </li>
-      <li>
-        <Link to="/categories" className="page-link">
-          Mada
-        </Link>
-      </li>
+      
       <li>
         <Link to="/contact" className="page-link">
           Wasiliana nasi
