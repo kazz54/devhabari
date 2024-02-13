@@ -12,6 +12,8 @@ const contact = () => {
         title="Contact Us | Revista"
         description="Reach out for any inquiries, or find out how you can help our mission!"
       />
+       <AboutUs />
+      <Vision />
       <ContactForm />
     </Layout>
   )
