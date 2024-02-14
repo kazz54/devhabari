@@ -11,7 +11,7 @@ const Links = ({ styleClass, children }) => {
       
       <li>
         <Link to="/contact" className="page-link">
-          Wasiliana nasi
+          Kuhusu Sisi
         </Link>
       </li>
     </ul>
