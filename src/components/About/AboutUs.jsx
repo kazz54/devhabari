@@ -11,18 +11,26 @@ const AboutUs = () => {
           <div className="col-lg-7">
             <div className="about-card">
               <AiOutlineRead className="icon" />
-              <h3>Humble Beginnings</h3>
+              <h3>Mkakati</h3>
               <p>
-              Flannel fixie tilde gastropub actually. La croix everyday carry hot chicken shaman snackwave. Godard art party hexagon hot chicken franzen woke. 8-bit VHS hoodie heirloom, YOLO poutine scenester cloud bread kombucha next level truffaut mustache bruh polaroid kale chips. Small batch PBR&B trust fund ethical before they sold out. Master cleanse sustainable locavore vinyl prism squid single-origin coffee.
+               DevHabiri ni tuvuti ambayo lengo lake niku chapisha makala za jinsi ambayo unaweza kutumia tekinologia katika mazingira yako ili kurahisisha shuhuli mbalimbali, hapa utapata mbinu na dondoo mbali mbali za jinsi ambanyo unaweza kutumia tekinologia.
+
+Tuliamua kuchagua lugha ya kiswahili kutokana na uhaba wa makala kamahizi kwa lugha hii "Kiswahili".
+
+Sababu nyingine kubwa zaidi ni kwamba lugha za tekinologia ya komputa zimeandikwa kwajili ya binadamua kusoma na kuelewa alafu mashine "komputa" huzitumia "execute" pale zinapo hitaji.
+
+kwa mantiki hiyo basi sisi tumeamua kuzisimulia(chambua)/"fafanua" kwa lugha ya kiswahili
+
+ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia makala haya na hatimaye kunufaika nayo kwa namna moja au nyingine.
               </p>
             </div>
           </div>
           <div className="col-lg-5">
             <div className="about-card">
               <AiOutlineDeploymentUnit className="icon" />
-              <h3>Access to Resources</h3>
+              <h3>Maono</h3>
               <p>
-              Adaptogen skateboard schlitz viral edison bulb knausgaard shabby chic drinking vinegar semiotics cred occupy. Fit roof party ugh fanny pack ascot. Blog messenger bag you probably haven't heard of them distillery, vexillologist offal brunch leggings gentrify sustainable mumblecore pok pok polaroid pour-over big mood. 
+              Jamii ya watu wanao endesha shuhuli zao kwa kutumia tekinologia, kiswahili na tekinologia inawezekana.  
               </p>
             </div>
           </div>
