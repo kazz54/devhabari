@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import About from './About'
 import Partners from './Partners'
 import './sidebar-styles.scss'
+//import SidebarCategories from './SidebarCategories'
 // import SidebarImage from './SidebarImage'
 
 const Sidebar = () => {
@@ -11,6 +12,7 @@ const Sidebar = () => {
       <SidebarStyles>
         <About />
         <Partners />
+        {/*<SidebarCategories /> */}
         {/* <SidebarImage/> */}
       </SidebarStyles>
     </div>
