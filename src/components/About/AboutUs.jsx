@@ -21,7 +21,7 @@ Sababu nyingine kubwa zaidi ni kwamba lugha za tekinologia ya komputa zimeandikw
 
 kwa mantiki hiyo basi sisi tumeamua kuzisimulia(chambua)/"fafanua" kwa lugha ya kiswahili
 
-ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia makala haya na hatimaye kunufaika nayo kwa namna moja au nyingine.
+ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia makala hizi na hatimaye kunufaika nazo kwa namna moja au nyingine.
               </p>
             </div>
           </div>
