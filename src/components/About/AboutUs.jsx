@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <Wrapper>
       <div className="container">
-        <h1 className="section-title about-us-title">Our Story</h1>
+        <h1 className="section-title about-us-title">DevHabari ni nini</h1>
         <div className="row">
           <div className="col-lg-7">
             <div className="about-card">
