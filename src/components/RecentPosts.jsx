@@ -55,7 +55,7 @@ const RecentPosts = () => {
                   <ul className="card-meta list-inline">
                     <li className="list-inline-item">
                       <AiOutlineClockCircle />
-                      {Math.ceil(post.fields.timeToRead.words / 275)} Dakika kusoma
+                      {Math.ceil(post.fields.timeToRead.words / 275)} Dakika Kusoma
                     </li>
                     <li className="list-inline-item">
                       <GoCalendar /> {date}
