@@ -11,7 +11,7 @@ const About = () => {
   return (
     <SidebarCard>
       <Wrapper>
-        <Title title="Kuhusu Sisi" />
+        <Title title="Makala kwenye barua" />
         <StaticImage
           src="../../assets/logo.png"
           layout="fixed"
