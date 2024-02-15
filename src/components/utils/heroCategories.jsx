@@ -5,6 +5,7 @@
 export const categories = [
   { category: 'Art', color: '#ffb8b0' },
   { category: 'Business', color: '#fdffba' },
+  { category: 'Javascript', color: '#fdffba' },
   { category: 'Creativity', color: '#b7ffff' },
   { category: 'Health', color: '#ffd6c5' },
   { category: 'History', color: '#ffffca' },
