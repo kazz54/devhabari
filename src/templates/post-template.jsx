@@ -15,7 +15,7 @@ import Seo from '../components/SEO'
 // import slugify from 'slugify'
 
 // import { Helmet } from 'react-helmet'
-const { words } = fields.timeToRead
+// const { words } = fields.timeToRead
 const PostTemplate = ({ data, children }) => {
   const {
     mdx: {
@@ -59,7 +59,7 @@ const PostTemplate = ({ data, children }) => {
                   <ul className="card-meta list-inline">
                     <li className="list-inline-item">
                       <AiOutlineClockCircle />
-                      {Math.ceil(words / 275)} Dakika Kusoma
+                      {Math.ceil(123 / 275)} Min Read
                     </li>
                     <li className="list-inline-item">
                       <GoCalendar /> {date}
