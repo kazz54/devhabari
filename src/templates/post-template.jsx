@@ -15,7 +15,7 @@ import Seo from '../components/SEO'
 // import slugify from 'slugify'
 
 // import { Helmet } from 'react-helmet'
-
+const { words } = fields.timeToRead
 const PostTemplate = ({ data, children }) => {
   const {
     mdx: {
