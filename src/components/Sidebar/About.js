@@ -1,7 +1,7 @@
 import React from 'react'
 import SocialLinks from '../../constants/socialLinks'
 import { StaticImage } from 'gatsby-plugin-image'
-import ContactForm from '../components/ContactForm'
+import ContactForm from '../ContactForm'
 import Title from './Title'
 import styled from 'styled-components'
 import SidebarCard from './SidebarCard'
