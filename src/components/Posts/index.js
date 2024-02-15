@@ -7,7 +7,7 @@ const Posts = ({ posts, title }) => {
       <div className="row">
         <div className="col-lg-8 col-12">
           <h3 className="section-title category-title">
-            category // <span>{title}</span>
+            mada // <span>{title}</span>
           </h3>
           <div className="">
             {/* posts column */}
