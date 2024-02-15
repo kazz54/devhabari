@@ -75,7 +75,7 @@ export default class Index extends React.Component {
                       onChange={this.handleChange}
                       id={"name"}
                       required={true}
-                      placeholder="Name"
+                      placeholder="Jina lako"
                     />
                   </div>
                 </div>
