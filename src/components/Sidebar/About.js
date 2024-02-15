@@ -1,6 +1,7 @@
 import React from 'react'
 import SocialLinks from '../../constants/socialLinks'
 import { StaticImage } from 'gatsby-plugin-image'
+import ContactForm from '../components/ContactForm'
 import Title from './Title'
 import styled from 'styled-components'
 import SidebarCard from './SidebarCard'
@@ -21,6 +22,7 @@ const About = () => {
         />
         <p>Pata makala zabura kabisa zenye mafunzo kwenye topic mbali mbali uzipendazo.</p>
         <SocialLinks className="sidebar-icons" />
+        <ContactForm/>
       </Wrapper>
     </SidebarCard>
   )
