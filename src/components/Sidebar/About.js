@@ -20,7 +20,7 @@ const About = () => {
           alt="author"
           className="img"
         />
-        <p>Pata makala zabura kabisa zenye mafunzo kwenye topic mbali mbali uzipendazo.</p>
+        <p>Pata makala zabure kabisa zenye mafunzo kwenye topic mbali mbali uzipendazo.</p>
         <SocialLinks className="sidebar-icons" />
         <ContactFormone/>
       </Wrapper>
