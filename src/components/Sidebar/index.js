@@ -11,7 +11,7 @@ const Sidebar = () => {
     <div className="col-xl-3 col-12">
       <SidebarStyles>
         
-        <Partners />
+        {/*<Partners /> */}
         {/*<SidebarCategories /> */}
         {/* <SidebarImage/> */}
       </SidebarStyles>
