@@ -1,7 +1,7 @@
 import React from 'react'
 import SocialLinks from '../constants/socialLinks'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faGithub, } from '@fortawesome/free-brands-svg-icons'
 import logo from '../assets/logo.png'
 import { Link } from 'gatsby'
