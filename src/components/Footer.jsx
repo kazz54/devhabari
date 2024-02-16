@@ -31,6 +31,7 @@ const Footer = () => {
           <FontAwesomeIcon icon={faMastodon} size="10x" />
           </a>
         </li>
+       <li><a href="https://discord.gg/" class="fab fa-discord"></a></li> 
       </ul>
           </div>
           
