@@ -111,6 +111,7 @@ Footer
   display: inline-block;
   color: blue;
   text-align: center;
+  justify-content: center;
   padding: 14px 16px;
   text-decoration: none;
 }
