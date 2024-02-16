@@ -48,7 +48,11 @@
     "styled-components": "^5.3.5",
     "gatsby-remark-embedded-codesandbox": "^1.2.0",
     "gatsby-remark-responsive-iframe": "^6.12.0",
-    "font-awesome": "^4.7.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.13",
     "gatsby-plugin-algolia": "^1.0.3",
     "algoliasearch": "^4.14.2"
   },
