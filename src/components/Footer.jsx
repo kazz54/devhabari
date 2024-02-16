@@ -1,6 +1,8 @@
 import React from 'react'
 import SocialLinks from '../constants/socialLinks'
 import styled from 'styled-components'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faInstagram, faGithub, } from '@fortawesome/free-brands-svg-icons'
 import logo from '../assets/logo.png'
 import { Link } from 'gatsby'
 const Footer = () => {
@@ -21,9 +23,12 @@ const Footer = () => {
         <SocialLinks styleClass="footer-icons" />
         <div className="footer-links">
           <div>
-            <Link className="footer-link" to="/privacy-policy">
-              Privacy Policy
+            <Link className="footer-link" to="">
+              <FontAwesomeIcon icon={faInstagram} size="1x" />
             </Link>
+            
+         
+      
           </div>
           <div>
             <Link className="footer-link" to="/terms-and-conditions">
