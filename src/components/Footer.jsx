@@ -23,14 +23,18 @@ const Footer = () => {
         <SocialLinks styleClass="footer-icons" />
         <div className="footer-links">
           <div>
-            
-         <a className='icons' href='https://www.instagram.com/devduara0/'>
+           <ul> 
+             
+        <li><a className='icons' href='https://www.instagram.com/devduara0/'>
          <FontAwesomeIcon icon={faInstagram} size="1x" />
         </a>
+          </li>
+      <li>
        <a className='icons' href='https://github.com/devduara0/'>
        <FontAwesomeIcon icon={faGithub} size="1x" />
       </a>
-      
+      </li>
+      </ul>
           </div>
           <div>
             <Link className="footer-link" to="/terms-and-conditions">
@@ -92,6 +96,25 @@ Footer
     height: 3rem;
   }
 
+  .footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.footer li {
+  float: left;
+}
+
+.footer li a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+  
   .footer-copyright {
     margin: 0.8rem 0 1.2rem 0;
   }
