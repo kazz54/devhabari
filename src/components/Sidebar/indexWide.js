@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import About from './About'
+//import About from './About'
 import Partners from './Partners'
 import SidebarCategories from './SidebarCategories'
 import './sidebar-styles.scss'
@@ -10,7 +10,7 @@ const SidebarWide = () => {
   return (
     <div className="col-lg-4 col-12">
       <SidebarStyles>
-        <About />
+        
         <Partners />
         <SidebarCategories />
         {/* <SidebarImage/> */}
