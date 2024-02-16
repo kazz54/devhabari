@@ -23,14 +23,13 @@ const Footer = () => {
         <SocialLinks styleClass="footer-icons" />
         <div className="footer-links">
           <div>
-            <Link className="footer-link" to="">
-              <FontAwesomeIcon icon={faInstagram} size="1x" />
-            </Link>
-            <Link className="footer-link" to="https://github.com/devduara0/">
-          
-            <FontAwesomeIcon icon={faGithub} size="1x" />
-             </Link>
-         
+            
+         <a className='icons' href='https://www.instagram.com/devduara0/'>
+         <FontAwesomeIcon icon={faInstagram} size="1x" />
+        </a>
+       <a className='icons' href='https://github.com/devduara0/'>
+       <FontAwesomeIcon icon={faGithub} size="1x" />
+      </a>
       
           </div>
           <div>
