@@ -26,9 +26,10 @@ const Footer = () => {
             <Link className="footer-link" to="">
               <FontAwesomeIcon icon={faInstagram} size="1x" />
             </Link>
-            <a className='icons' href='https://github.com/devduara0/'>
+            <Link className="footer-link" to="https://github.com/devduara0/">
+          
             <FontAwesomeIcon icon={faGithub} size="1x" />
-             </a>
+             </Link>
          
       
           </div>
