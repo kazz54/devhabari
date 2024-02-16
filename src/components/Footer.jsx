@@ -109,7 +109,7 @@ Footer
 
 .footer li a {
   display: inline-block;
-  color: black;
+  color: blue;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
