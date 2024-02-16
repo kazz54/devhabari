@@ -109,9 +109,9 @@ Footer
 
 .footer li a {
   display: inline-block;
-  color: blue;
-  text-align: center;
+  color: var(--primary-8);
   justify-content: center;
+  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
