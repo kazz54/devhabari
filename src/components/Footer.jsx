@@ -9,16 +9,8 @@ const Footer = () => {
   return (
     <FooterStyles>
       <div className="footer">
-        <Link to="/">
-          {' '}
-          <img
-            className="footer-logo"
-            src={logo}
-            alt="Open Mastery Logo"
-            width="100"
-            height="100"
-          />
-        </Link>
+        
+        
 
         <SocialLinks styleClass="footer-icons" />
         <div className="footer-links">
@@ -36,13 +28,9 @@ const Footer = () => {
       </li>
       </ul>
           </div>
-          <div>
-            <Link className="footer-link" to="/terms-and-conditions">
-              Terms and Conditions
-            </Link>
-          </div>
+          
         </div>
-
+       
         <p className="footer-copyright">
           &copy;2022-{new Date().getFullYear()} Devduara0. All rights reserved.
         </p>
