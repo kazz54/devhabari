@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
        
         <p className="footer-copyright">
-          &copy;2022-{new Date().getFullYear()} Devduara0. All rights reserved.
+          &copy;2022-{new Date().getFullYear()} Devhabri,haki zote zimehifadhiwa.
         </p>
       </div>
     </FooterStyles>
