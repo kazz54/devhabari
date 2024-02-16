@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import About from './About'
+//import About from './About'
 import Partners from './Partners'
 import './sidebar-styles.scss'
 //import SidebarCategories from './SidebarCategories'
@@ -10,7 +10,7 @@ const Sidebar = () => {
   return (
     <div className="col-xl-3 col-12">
       <SidebarStyles>
-        <About />
+        
         <Partners />
         {/*<SidebarCategories /> */}
         {/* <SidebarImage/> */}
