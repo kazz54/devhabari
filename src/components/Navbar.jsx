@@ -18,12 +18,12 @@ const Navbar = ({ toggle }) => {
         <div className="nav-center">
           <div className="nav-header">
             <Link to="/" className="nav-logo not-blue">
-              <img
+              {/*<img
                 src={logo}
                 alt="Open Mastery Logo"
                 width="100"
                 height="100"
-              />
+              />*/}
               <div className="logo-text">
                 <span className="nav-word-open">Dev</span>
                 <span className="nav-word-ed">Habari</span>
