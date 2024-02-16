@@ -18,20 +18,19 @@ const Footer = () => {
            <ul> 
              
         <li><a className='icons' href='https://www.instagram.com/devduara0/'>
-         <FontAwesomeIcon icon={faInstagram} size="10x" />
+         <FontAwesomeIcon icon={faInstagram} size="7x" />
         </a>
           </li>
       <li>
        <a className='icons' href='https://github.com/devduara0/'>
-       <FontAwesomeIcon icon={faGithub} size="10x" />
+       <FontAwesomeIcon icon={faGithub} size="7x" />
       </a>
       </li>
       <li>
         <a className='icons' href='https://github.com/devduara0/'>
-          <FontAwesomeIcon icon={faMastodon} size="10x" />
+          <FontAwesomeIcon icon={faMastodon} size="7x" />
           </a>
-        </li>
-       <li><a href="https://discord.gg/" class="fab fa-discord"></a></li> 
+        </li> 
       </ul>
           </div>
           
