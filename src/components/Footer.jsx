@@ -26,6 +26,11 @@ const Footer = () => {
        <FontAwesomeIcon icon={faGithub} size="15x" />
       </a>
       </li>
+      <li>
+        <a className='icons' href='https://github.com/devduara0/'>
+          <FontAwesomeIcon icon={faMastodon} size="10x" />
+          </a>
+        </li>
       </ul>
           </div>
           
