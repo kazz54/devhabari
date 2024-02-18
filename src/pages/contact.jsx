@@ -12,28 +12,20 @@ const contact = () => {
     <Layout>
       <Wrapper>
         <Seo
-          title="Support Us | Revista"
+          title="Kuhusu Sisi | DevHabari"
           description="There are several ways you can support Revista"
         />
         <div className="container support-container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="section-title categories-title">Support Us</h1>
+              <h1 className="section-title categories-title">Jarida letu</h1>
           
               <p>
-                We are also an{' '}
-                <a
-                  href="https://github.com/chrisnmorrison/revista-gatsby-blog-magazine"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  open-source blog template
-                </a>
-                , and if you're interested in an out-of-the-box Markdown
-                blog/magazine starter, fork our repo and modify to fit your
-                uses!
+               Jarida lililo andaliwa kwa lengo la kubadilishana 
+
+              Ujuzi inapokuja kwenye swala lakutumia tekinologia Ili kutatua changamoto mbali mbali! 
               </p>
-              <p>There are a few ways you can support us:</p>
+              <p>Kufikia azima hiyo, hii ni mikakati na maono ya DevHabari:</p>
 
               {/* Item */}
               <div className="support-item">
@@ -52,19 +44,11 @@ const contact = () => {
                   </a>
                 </div>
                 <div>
-                  <h2 className="support-title">Buy Me a Coffee</h2>
+                  <h2 className="support-title">Maono</h2>
                   <p>
-                    Support Revista's founder and primary maintainer. Part of
-                    your donations go to maintaining Revista, as well as the
-                    other education promoting services that Chris created, like{' '}
-                    <a
-                      href="https://openmastery.one"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Open Mastery
-                    </a>
-                    .
+                     Jamii ya watu wanao endesha shuhuli zao kwa kutumia tekinologia, kiswahili na tekinologia inawezekana.
+            
+                    
                   </p>
                   <a
                     className="support-link"
@@ -93,14 +77,18 @@ const contact = () => {
                   </a>
                 </div>
                 <div>
-                  <h2 className="support-title">Improve & Enhance our Code</h2>
+                  <h2 className="support-title">Mikakati</h2>
                   <p>
-                    Revista is an open-source blog/magazine template, and is
-                    ready for you to add your articles! If you'd like to help us
-                    improve, feel free to open an issue, or check out the
-                    currently open issues on Github. We use Markdown, GraphQL,
-                    Gatsby, and React, so if you know any of those, it's easy to
-                    contribute!
+                    DevHabiri ni tuvuti ambayo lengo lake niku chapisha makala za jinsi ambayo unaweza kutumia tekinologia katika mazingira yako ili kurahisisha shuhuli mbalimbali, hapa utapata mbinu na dondoo mbali mbali za jinsi ambanyo unaweza kutumia tekinologia.
+
+Tuliamua kuchagua lugha ya kiswahili kutokana na uhaba wa makala kamahizi kwa lugha hii "Kiswahili".
+
+Sababu nyingine kubwa zaidi ni kwamba lugha za tekinologia ya komputa zimeandikwa kwajili ya binadamua kusoma na kuelewa alafu mashine "komputa" huzitumia "execute" pale zinapo hitaji.
+
+kwa mantiki hiyo basi sisi tumeamua kuzisimulia(chambua)/"fafanua" kwa lugha ya kiswahili
+
+ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia makala hizi na hatimaye kunufaika nazo kwa namna moja au nyingine.
+              
                   </p>
                   <p>
                     Don't forget to{' '}
