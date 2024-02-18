@@ -20,14 +20,7 @@ const Network = () => {
               </p>
               <p>Adaptogen skateboard schlitz viral edison bulb knausgaard shabby chic drinking vinegar semiotics cred occupy. Fit roof party ugh fanny pack ascot.</p>
             </div>
-            <div className="picture">
-              <StaticImage
-                src="../../assets/undraw_open_source.svg"
-                alt="Open Source Illustration"
-                layout="constrained"
-                placeholder="blurred"
-              />
-            </div>
+            
 
             <div className="openmastery">
               <AiOutlineDeploymentUnit className="icon" />
