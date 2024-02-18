@@ -68,6 +68,7 @@ const SocialLinksStyles = styled.div`
     }
     .nav-center {
       display: grid;
+      color: var(--primary-8);
       grid-template-columns: auto 1fr auto;
       column-gap: 2rem;
       align-items: center;
@@ -80,7 +81,7 @@ const SocialLinksStyles = styled.div`
       margin-right: 1rem;
     }
     .page-link {
-      color: var(--black);
+      color: var(--primary-8);
       font-weight: 500;
       letter-spacing: var(--spacing);
       font-size: 1rem;
