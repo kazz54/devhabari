@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import Seo from '../components/SEO'
 import ContactForm from '../components/ContactForm'
 import styled from 'styled-components'
-import Bmc from '../assets/bmc-logo-no-background.png'
+import Bmc from '../assets/bmc-logo-streamline.png'
 import Github from '../assets/github.png'
 import SocialMedia from '../assets/social-media.png'
 
