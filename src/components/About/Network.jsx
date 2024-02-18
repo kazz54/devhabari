@@ -2,8 +2,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { AiOutlineDeploymentUnit, AiOutlineRead } from 'react-icons/ai'
-
+import { AiOutlineDeploymentUnit } from 'react-icons/ai'
 
 const Network = () => {
   return (
@@ -15,18 +14,10 @@ const Network = () => {
             
 
             <div className="openmastery">
-              <AiOutlineRead className="icon" />
-              <h3>Mkakati</h3>
+              <AiOutlineDeploymentUnit className="icon" />
+              <h3>Partner 1</h3>
               <p>
-               DevHabiri ni tuvuti ambayo lengo lake niku chapisha makala za jinsi ambayo unaweza kutumia tekinologia katika mazingira yako ili kurahisisha shuhuli mbalimbali, hapa utapata mbinu na dondoo mbali mbali za jinsi ambanyo unaweza kutumia tekinologia.
-
-Tuliamua kuchagua lugha ya kiswahili kutokana na uhaba wa makala kamahizi kwa lugha hii "Kiswahili".
-
-Sababu nyingine kubwa zaidi ni kwamba lugha za tekinologia ya komputa zimeandikwa kwajili ya binadamua kusoma na kuelewa alafu mashine "komputa" huzitumia "execute" pale zinapo hitaji.
-
-kwa mantiki hiyo basi sisi tumeamua kuzisimulia(chambua)/"fafanua" kwa lugha ya kiswahili
-
-ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia makala hizi na hatimaye kunufaika nazo kwa namna moja au nyingine.
+              Adaptogen skateboard schlitz viral edison bulb knausgaard shabby chic drinking vinegar semiotics cred occupy. Fit roof party ugh fanny pack ascot. Blog messenger bag you probably haven't heard of them distillery, vexillologist offal brunch leggings gentrify sustainable mumblecore pok pok polaroid pour-over big mood. 
               </p>
               <p>
                 <a href="#" target="_blank" rel="noopener noreferrer">Check it out</a>
@@ -34,9 +25,9 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
             </div>
             <div className="openjournal">
               <AiOutlineDeploymentUnit className="icon" />
-              <h3>Maono</h3>
+              <h3>Partner 2</h3>
               <p>
-              Jamii ya watu wanao endesha shuhuli zao kwa kutumia tekinologia, kiswahili na tekinologia inawezekana.  
+              Adaptogen skateboard schlitz viral edison bulb knausgaard shabby chic drinking vinegar semiotics cred occupy.
               </p>
             </div>
             <div className="network-card">
