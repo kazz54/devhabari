@@ -10,16 +10,7 @@ const Network = () => {
       <div className="container">
         <div className="row">
           <div className="section">
-            <div className="about">
-              <h5 className="subtitle">About Us</h5>
-              <h2 className="network-section-title">
-              Growing Network of Resources
-              </h2>
-              <p>
-              Adaptogen skateboard schlitz viral edison bulb knausgaard shabby chic drinking vinegar semiotics cred occupy.
-              </p>
-              <p>Adaptogen skateboard schlitz viral edison bulb knausgaard shabby chic drinking vinegar semiotics cred occupy. Fit roof party ugh fanny pack ascot.</p>
-            </div>
+           
             
 
             <div className="openmastery">
