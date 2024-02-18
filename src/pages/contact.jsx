@@ -25,7 +25,7 @@ const contact = () => {
 
               Ujuzi inapokuja kwenye swala lakutumia tekinologia Ili kutatua changamoto mbali mbali! 
               </p>
-              <p>Kufikia azima hiyo, hii ni mikakati na maono ya DevHabari:</p>
+              <p>Kufikia azima hiyo, haya ni maono na mikakati ya DevHabari:</p>
 
               {/* Item */}
               <div className="support-item">
