@@ -2,7 +2,8 @@ import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { AiOutlineDeploymentUnit } from 'react-icons/ai'
+import { AiOutlineDeploymentUnit, AiOutlineRead } from 'react-icons/ai'
+
 
 const Network = () => {
   return (
