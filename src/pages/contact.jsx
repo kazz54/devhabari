@@ -4,7 +4,7 @@ import Seo from '../components/SEO'
 import ContactForm from '../components/ContactForm'
 import styled from 'styled-components'
 import Bmc from '../assets/bmc-logo-streamline.png'
-import Github from '../assets/github.png'
+import Github from '../assets/search-book--brainstorm.png'
 import SocialMedia from '../assets/social-media.png'
 
 const contact = () => {
