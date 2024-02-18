@@ -33,9 +33,9 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
             </div>
             <div className="openjournal">
               <AiOutlineDeploymentUnit className="icon" />
-              <h3>Partner 2</h3>
+              <h3>Maono</h3>
               <p>
-              Adaptogen skateboard schlitz viral edison bulb knausgaard shabby chic drinking vinegar semiotics cred occupy.
+              Jamii ya watu wanao endesha shuhuli zao kwa kutumia tekinologia, kiswahili na tekinologia inawezekana.  
               </p>
             </div>
             <div className="network-card">
