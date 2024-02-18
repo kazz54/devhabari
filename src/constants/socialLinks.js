@@ -62,10 +62,7 @@ const SocialLinksStyles = styled.div`
   .reddit-icon {
     color: orangered;
   }
-  @media screen and (min-width: 800px) {
-    .toggle-btn {
-      display: none;
-    }
+  
     .nav-center {
       display: grid;
       color: var(--primary-8);
