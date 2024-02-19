@@ -21,163 +21,458 @@ This file contains various Markdown snippets that you may use to construct an ar
 
 #### h4 Heading
 
-##### h5 Heading
-
-###### h6 Heading
-
-```
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-```
-
-## Horizontal Rules
-
----
-
----
-
----
-
-```
-___
-
----
-
-***
-```
-
-## Links
-
-[Link Text](http://dev.nodeca.com)
-
-[Link with Title](http://nodeca.github.io/pica/demo/ 'Title Text!')
-
-```
-[Link Text](http://dev.nodeca.com)
-
-[Link with Title](http://nodeca.github.io/pica/demo/ "Title Text!")
-```
-
-## Images
-
-Images are easy to use in Markdown.
-
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg 'The Stormtroopocat')
-![Alt text goes here](./images/html-2.png)
-
-```
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-![Alt text goes here](./images/html-2.png)
-
-```
-
-Note that although possible with special configuration, you currently cannot modify the size of in-article images. The current max width is 650px. Please size image files accordingly for the fastest build times!
-
-## Emphasis
-
-**This is bold text**
-
-**This is bold text**
-
-_This is italic text_
-
-_This is italic text_
-
-~~Strikethrough~~
-
-```
-**This is bold text**
-
-__This is bold text__
-
-*This is italic text*
-
-_This is italic text_
-
-~~Strikethrough~~
-```
-
-## Blockquotes
-
-IMPORTANT: If you don't see any styling here, we haven't decided on blockquote styling yet :)
-
-> Blockquotes can also be nested...
->
-> > ...by using additional greater-than signs right next to each other...
-> >
-> > > ...or with spaces between arrows.
-
-```
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
->>> ...or with spaces between arrows.
-```
-
-## Lists
-
-#### Unordered
-
-- Create a list by starting a line with `+`, `-`, or `*`
-- Very easy!
-
-#### Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-###### Start numbering with offset:
-
-158. foo
-159. bar
-
-```
-#### Unordered
-
-- Create a list by starting a line with `+`, `-`, or `*`
-- Very easy!
 
 
-#### Ordered
 
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
 
-###### Start numbering with offset:
 
-158. foo
-159. bar
-```
+[![](https://1.bp.blogspot.com/-MzRpzIRzmyQ/XPRAQ5AJm7I/AAAAAAAAMlU/w1_joHJXzmQ_dS_JxpdBJx4i6Cc-yBalACLcBGAs/s400/communication-4237439_1280.jpg)](https://1.bp.blogspot.com/-MzRpzIRzmyQ/XPRAQ5AJm7I/AAAAAAAAMlU/w1_joHJXzmQ_dS_JxpdBJx4i6Cc-yBalACLcBGAs/s1600/communication-4237439_1280.jpg)
 
-## Code
+  
+This post begins with already working project and app's, I found that there some few requirement's  
+that my project needed to handle and the best option for those requirement's was to use the Django's  Rest Framework. The way that I will tackle this task is more specific to the needs of the project rather than a one to one how to..., that being said you can still follow along, the approach that I'm going to use is easy to follow since I'll be providing a lot of information a log the way for better understanding of the why and how.....this code is available on [Github](https://github.com/kazz54/REST-API), enough with the alerts and on with the show.  
+  
+**Note:** If you would want to mimic the exactly settings then you will need to enable user authentication on your project you can [follow this link for details](https://cloudtails.blogspot.com/2019/05/django-user-authentication-how-to-login.html).   
+  
+Start with the DRF (Django Rest Framework) installation  
+  
+`pip3 install djangorestframework`  
 
-Inline `code`
+  
 
-Block code "fences"
+For our app to use DRF, we'll have to add `rest_framework` into our `settings.py.` 
 
-```
-Sample text here...
-Can span multi lines
-```
+  
 
-````
-Inline `code`
+`nano bio_metric/settings.py`
 
-Block code "fences"
+  
 
-```
-Sample text here...
-Can span multi lines
-```
-````
+`INSTALLED_APPS = [`
 
-At the moment, we have not implemented syntax highlighting. We recommend either prismjs or highlightjs if you'd like to add highlighting!
+    'django.contrib.admin',
 
-## Tables
+    'django.contrib.auth',
 
-Currently, we do not use HTML tables, however we may implement styling for this if there is a use-case in the future.
+    'django.contrib.contenttypes',
+
+    'django.contrib.sessions',
+
+    'django.contrib.messages',
+
+    'django.contrib.staticfiles',
+
+    'rest\_framework', ------ \# new
+
+    'accounts',
+
+    'base',
+
+\]
+
+  
+
+My model look's like this  
+
+  
+
+`nano base/models.py`
+
+  
+
+`from django.conf import settings`
+
+from django.db import models
+
+from django.utils import timezone
+
+  
+
+  
+
+class Post(models.Model):
+
+    author = models.ForeignKey(settings.AUTH\_USER\_MODEL, on\_delete=models.CASCADE)
+
+    title = models.CharField(max\_length=50)
+
+    text = models.CharField(max\_length=200)
+
+    created\_date = models.DateTimeField(default=timezone.now)
+
+  
+
+"""Return a human readable representation of the model instance."""  
+
+    def \_\_str\_\_(self):
+
+        return self.title
+
+  
+  
+
+**Serialization**
+
+A Serializer transforms model instances into JSON or XML. This the real great function that Django Rest Framework provides for us since ultimately a web API endpoint returns data we can understand, like JSON or XML and available HTTP verbs.  
+
+  
+
+  
+
+Adding endpoints to the Post and User models
+
+  
+
+`nano base/serializers.py`
+
+  
+
+`from django.contrib.auth.models import User`
+
+from rest\_framework import serializers
+
+from base.models import Post
+
+  
+
+  
+
+  
+
+class PostSerializer(serializers.ModelSerializer):
+
+    author = serializers.ReadOnlyField(source='author.username') 
+
+    class Meta:
+
+        model = Post
+
+        fields = ('id', 'title', 'text', 'author', )
+
+  
+
+  
+
+class UserSerializer(serializers.ModelSerializer):
+
+    posts = serializers.PrimaryKeyRelatedField(
+
+        many=True, queryset=Post.objects.all())
+
+  
+
+    class Meta:
+
+        model = User
+
+        fields = ('id', 'username', 'posts')
+
+  
+
+  
+
+Since posts is a reverse relationship on the default Django User model, it will not be included by default using the ModelSerializer class, we need to add an explicit field for it.  
+
+  
+
+`nano base/views.py`
+
+  
+
+`from django.conf import settings`
+
+from django.utils import timezone
+
+from django.shortcuts import render, get\_object\_or\_404
+
+from .models import Post
+
+from .forms import PostForm
+
+from django.shortcuts import redirect
+
+from django.contrib.auth.models import User **\# new**
+
+from rest\_framework import generics, permissions **\# new**
+
+from .serializers import PostSerializer, UserSerializer **\# new**
+
+\# Create your views here.
+
+  
+
+  
+
+def post\_detail(request, pk):
+
+    post = get\_object\_or\_404(Post, pk=pk)
+
+    return render(request, 'base/post\_detail.html', {'post': post})
+
+  
+
+  
+
+def post\_new(request):
+
+    if request.method == "POST":
+
+        form = PostForm(request.POST)
+
+        if form.is\_valid():
+
+            post = form.save(commit=False)
+
+            post.author = request.user
+
+            post.published\_date = timezone.now()
+
+            post.save()
+
+            return redirect('post\_detail', pk=post.pk)
+
+    else:
+
+        form = PostForm()
+
+    return render(request, 'base/post\_edit.html', {'form': form})
+
+  
+
+def post\_edit(request, pk):
+
+    post = get\_object\_or\_404(Post, pk=pk)
+
+    if request.method == "POST":
+
+        form = PostForm(request.POST, instance=post)
+
+        if form.is\_valid():
+
+            post = form.save(commit=False)
+
+            post.author = request.user
+
+            post.published\_date = timezone.now()
+
+            post.save()
+
+            return redirect('post\_detail', pk=post.pk)
+
+    else:
+
+        form = PostForm(instance=post)
+
+    return render(request, 'base/post\_edit.html', {'form': form})
+
+  
+
+  
+
+  
+
+class PostList(generics.ListCreateAPIView):
+
+    queryset = Post.objects.all()
+
+    serializer\_class = PostSerializer
+
+    permission\_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+  
+
+    def perform\_create(self, serializer): **\# new**
+
+        serializer.save(author=self.request.user)
+
+  
+
+class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+
+    queryset = Post.objects.all()
+
+    serializer\_class = PostSerializer
+
+    permission\_classes = (permissions.IsAuthenticatedOrReadOnly,) **\# new**
+
+  
+
+class UserList(generics.ListAPIView): **\# new**
+
+    queryset = User.objects.all()
+
+    serializer\_class = UserSerializer
+
+  
+
+class UserDetail(generics.RetrieveAPIView): **\# new**
+
+    queryset = User.objects.all()
+
+    serializer\_class = UserSerializer
+
+  
+
+**Note on the view above I've used [ListCreateAPIView](http://www.django-rest-framework.org/api-guide/generic-views/#listcreateapiview) to create a read-only endpoint that lists all available Post instances and then [RetrieveUpdateDestroyAPIView](http://www.django-rest-framework.org/api-guide/generic-views/#retrieveupdatedestroyapiview) for a detail view of individual posts which supports CRUD-like functionality.**
+
+  
+
+`nano base/urls.py`
+
+  
+
+`from django.urls import path` 
+
+from . import views
+
+from rest\_framework.urlpatterns import format\_suffix\_patterns **\# new**
+
+urlpatterns = \[
+
+    path('post//', views.post\_detail, name='post\_detail'),
+
+    path('post//edit/', views.post\_edit, name='post\_edit'),
+
+    path('post/new/', views.post\_new, name='post\_new'),
+
+    path('posts/', views.PostList.as\_view()), **\# new**
+
+    path('posts//', views.PostDetail.as\_view()), **\# new**
+
+    path('users/', views.UserList.as\_view()), **\# new**
+
+    path('users//', views.UserDetail.as\_view()), **\# new**
+
+\]
+
+urlpatterns = format\_suffix\_patterns(urlpatterns) **\# new**
+
+  
+
+Adding login to the browsable API
+
+We can add login to the API page so that we don't have to go to the main site when we want to login,  
+to add a login view to the browsable API we need to edit the `URLconf` in our project-level `bio_metric/urls.py` file.  
+
+  
+
+Add rest\_framework.urls to the route.
+
+  
+
+`nano bio_metric/urls.py`
+
+  
+
+`from django.contrib import admin`
+
+from django.urls import path, include
+
+from django.views.generic.base import TemplateView 
+
+  
+
+urlpatterns = \[
+
+    path('base/', include('base.urls')),
+
+    path('accounts/', include('accounts.urls')), 
+
+    path('login/', include('rest\_framework.urls')), **\# new**
+
+    path('', TemplateView.as\_view(template\_name='home.html'), name='home'), 
+
+    path('accounts/', include('django.contrib.auth.urls')), 
+
+    path('admin/', admin.site.urls),
+
+\]
+
+Notice the name "login" above could be anything The important part is that "rest\_framework.urls" .
+
+  
+
+Fire up the server and test **CRUD** functionality
+
+  
+
+`python3 manage.py runserver 192.168.0.245:8000`
+
+  
+
+Post Lists ----- I get all the posts
+
+[![](https://1.bp.blogspot.com/--KxD5qazM3M/XPQXOFzhYuI/AAAAAAAAMjo/6bNXiDFCF-c9HzhkrkN-9N4WAwGW4eDXwCLcBGAs/s320/Screenshot%2B%252820%2529.png)](https://1.bp.blogspot.com/--KxD5qazM3M/XPQXOFzhYuI/AAAAAAAAMjo/6bNXiDFCF-c9HzhkrkN-9N4WAwGW4eDXwCLcBGAs/s1600/Screenshot%2B%252820%2529.png)
+
+Post detail ----- details of a particular post
+
+[![](https://1.bp.blogspot.com/-yVoV1qe6deo/XPQYWfvLk6I/AAAAAAAAMjw/QOPiaXSbqlAnU2sEVuPyTOxQLvlTllUXgCLcBGAs/s320/Screenshot%2B%252821%2529.png)](https://1.bp.blogspot.com/-yVoV1qe6deo/XPQYWfvLk6I/AAAAAAAAMjw/QOPiaXSbqlAnU2sEVuPyTOxQLvlTllUXgCLcBGAs/s1600/Screenshot%2B%252821%2529.png)
+
+API login
+
+[![](https://1.bp.blogspot.com/-Nu6sLe-M2GI/XPQZHk17lUI/AAAAAAAAMj8/4ZpowqtMxfM-HFwCd_-nlJ1ImO_XLl2zQCLcBGAs/s320/Screenshot%2B%252822%2529.png)](https://1.bp.blogspot.com/-Nu6sLe-M2GI/XPQZHk17lUI/AAAAAAAAMj8/4ZpowqtMxfM-HFwCd_-nlJ1ImO_XLl2zQCLcBGAs/s1600/Screenshot%2B%252822%2529.png)
+
+User have login 
+
+[![](https://1.bp.blogspot.com/-hpjmPku3lBc/XPQj3FVtkOI/AAAAAAAAMkw/F20ozeYialYf1Xq92VHQb0PnLxTVJy7CwCLcBGAs/s400/Screenshot%2B%2528231%2529.png)](https://1.bp.blogspot.com/-hpjmPku3lBc/XPQj3FVtkOI/AAAAAAAAMkw/F20ozeYialYf1Xq92VHQb0PnLxTVJy7CwCLcBGAs/s1600/Screenshot%2B%2528231%2529.png)
+
+Now you can delete the post
+
+[![](https://1.bp.blogspot.com/-u9cxTSdzjAg/XPQjc4qTlII/AAAAAAAAMks/dOv-YRXnBQUliPch0qmRZcM_GNu3Et10ACLcBGAs/s320/Screenshot%2B%252824%2529.png)](https://1.bp.blogspot.com/-u9cxTSdzjAg/XPQjc4qTlII/AAAAAAAAMks/dOv-YRXnBQUliPch0qmRZcM_GNu3Et10ACLcBGAs/s1600/Screenshot%2B%252824%2529.png)
+
+I have deleted one post only two post remaining
+
+[![](https://1.bp.blogspot.com/-SqOn11XczXc/XPQjQszK66I/AAAAAAAAMko/c1kFCKah4uIOPW8p_8iBFP2JVFqxFyP6QCLcBGAs/s400/Screenshot%2B%252825%2529.png)](https://1.bp.blogspot.com/-SqOn11XczXc/XPQjQszK66I/AAAAAAAAMko/c1kFCKah4uIOPW8p_8iBFP2JVFqxFyP6QCLcBGAs/s1600/Screenshot%2B%252825%2529.png)
+
+Updating the second post
+
+[![](https://1.bp.blogspot.com/-OhYj_hYNf5I/XPQink4X2oI/AAAAAAAAMkk/7aDkLlbN-wsSZiEGHVuTc01nu_IdAB49QCLcBGAs/s400/Screenshot%2B%252826%2529.png)](https://1.bp.blogspot.com/-OhYj_hYNf5I/XPQink4X2oI/AAAAAAAAMkk/7aDkLlbN-wsSZiEGHVuTc01nu_IdAB49QCLcBGAs/s1600/Screenshot%2B%252826%2529.png)
+
+Creating a new post
+
+  
+
+[![](https://1.bp.blogspot.com/-1WWjcz-KGcE/XPQiMWhS6qI/AAAAAAAAMkg/lHcSvtaE5moBmhdVC9KUMVM_9V-OSKVTQCLcBGAs/s400/Screenshot%2B%252827%2529.png)](https://1.bp.blogspot.com/-1WWjcz-KGcE/XPQiMWhS6qI/AAAAAAAAMkg/lHcSvtaE5moBmhdVC9KUMVM_9V-OSKVTQCLcBGAs/s1600/Screenshot%2B%252827%2529.png)
+
+New post has been created
+
+  
+
+  
+
+[![](https://1.bp.blogspot.com/-EtU7L-QT9IM/XPQhV8EIUMI/AAAAAAAAMkc/mhzR4lpqFB8428TTBiaHjKnvFZfN6zHKACLcBGAs/s400/Screenshot%2B%252828%2529.png)](https://1.bp.blogspot.com/-EtU7L-QT9IM/XPQhV8EIUMI/AAAAAAAAMkc/mhzR4lpqFB8428TTBiaHjKnvFZfN6zHKACLcBGAs/s1600/Screenshot%2B%252828%2529.png)
+
+List of the current posts
+
+[![](https://1.bp.blogspot.com/-LHfz7o5Xsac/XPQl2reNuzI/AAAAAAAAMk8/WGhi4UOifjklmKk0DOdz9CWRycj9L2CiACLcBGAs/s400/Screenshot%2B%252820%2529.png)](https://1.bp.blogspot.com/-LHfz7o5Xsac/XPQl2reNuzI/AAAAAAAAMk8/WGhi4UOifjklmKk0DOdz9CWRycj9L2CiACLcBGAs/s1600/Screenshot%2B%252820%2529.png)
+
+ The JSON file  
+  
+  
+
+[![](https://1.bp.blogspot.com/-XKHzVm-PAoM/XPQmr3A4nWI/AAAAAAAAMlA/-tU7nSzIQkgz4-f-nrtwG0pGgl8LG-YLQCLcBGAs/s400/Screenshot%2B%252830%2529.png)](https://1.bp.blogspot.com/-XKHzVm-PAoM/XPQmr3A4nWI/AAAAAAAAMlA/-tU7nSzIQkgz4-f-nrtwG0pGgl8LG-YLQCLcBGAs/s1600/Screenshot%2B%252830%2529.png)
+
+Again here the List of the current posts same info being returned by the JSON file above
+
+[![](https://1.bp.blogspot.com/-tylkhOpOtD4/XPQm73Kiq4I/AAAAAAAAMlE/_qt-xC1Nu5wAkdqdNL6K_lWbjWPb0gjrgCLcBGAs/s400/Screenshot%2B%252831%2529.png)](https://1.bp.blogspot.com/-tylkhOpOtD4/XPQm73Kiq4I/AAAAAAAAMlE/_qt-xC1Nu5wAkdqdNL6K_lWbjWPb0gjrgCLcBGAs/s1600/Screenshot%2B%252831%2529.png)
+
+We cant enumerate the deleted or non existing content by id
+
+[![](https://1.bp.blogspot.com/-Ym6X9gmwn3Y/XPQn2Kn_w7I/AAAAAAAAMlI/s6ka68PdBUUDsp2jKojlZg8YEExt383KgCLcBGAs/s400/Screenshot%2B%252832%2529.png)](https://1.bp.blogspot.com/-Ym6X9gmwn3Y/XPQn2Kn_w7I/AAAAAAAAMlI/s6ka68PdBUUDsp2jKojlZg8YEExt383KgCLcBGAs/s1600/Screenshot%2B%252832%2529.png)
+
+We can enumerate existing content by the id
+
+[![](https://1.bp.blogspot.com/-ntYFGzLG1Tg/XPQoWQWbdqI/AAAAAAAAMlM/BJ1kbYocSpw3e-p6gKWm8W3VgmHvj1ISQCLcBGAs/s400/Screenshot%2B%252833%2529.png)](https://1.bp.blogspot.com/-ntYFGzLG1Tg/XPQoWQWbdqI/AAAAAAAAMlM/BJ1kbYocSpw3e-p6gKWm8W3VgmHvj1ISQCLcBGAs/s1600/Screenshot%2B%252833%2529.png)
+
+  
+  
+
+  
+
+  
+
+Associating Posts with Users
+
+if you want to enumerate users you will run into this  `'User' object has no attribute 'posts'`
+
+Based on my requirement's this is enough. I can do the crud functionality on the Post if you want to do the crud functionally to the user's as well you will need to do some modification on the `serializers.py` and `views.py` you may olso want to consider securing the API probably with https. Very unfortunate those topic are out of scope for this post.
