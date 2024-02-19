@@ -6,7 +6,7 @@ const Head = () => {
     <>
       <Helmet
         htmlAttributes={{
-          lang: 'en',
+          lang: 'sw',
         }}
       >
         <link rel="canonical" href="https://opened.one" />
