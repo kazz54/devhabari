@@ -14,15 +14,15 @@ require('dotenv').config({
 module.exports = {
   pathPrefix: `/`,
   siteMetadata: {
-    title: 'Devduara0',
+    title: 'DevHabari',
     titleTemplate: '',
     // titleTemplate: "%s - Curated List of Free Education Resources",
      description:
-      'Devduara ni jarida la tekinologia',
+      'DevHabari ni jarida la tekinologia',
     url: 'https://revista.mesmerdesign.ca', // No trailing slash allowed!
     image: '/logo.png', // Path to the image placed in the 'static' folder, in the project's root directory.
     twitterUsername: '',
-    defaultTitle: 'Devduara0',
+    defaultTitle: 'DevHabari',
   },
 
   plugins: [
