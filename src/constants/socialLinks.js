@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   FaRedditSquare,
-  FaMastodon,
+  FaMastodonSquare,
   FaTwitterSquare,
   FaGithubSquare,
 } from 'react-icons/fa'
