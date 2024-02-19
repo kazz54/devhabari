@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   FaRedditSquare,
-  FaMastodonSquare,
+  FaMastodon,
   FaTwitterSquare,
   FaGithubSquare,
 } from 'react-icons/fa'
@@ -38,7 +38,7 @@ const SocialLinks = () => {
             rel="noopener noreferrer"
             aria-label="Link to Twitter"
           >
-            <FaMastodonSquare className="social-icon twitter-icon"></FaMastodonSquare>
+            <FaMastodon className="social-icon twitter-icon"></FaMastodon>
           </a>
         </li>      
         <li>
