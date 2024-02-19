@@ -132,8 +132,10 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
         <div className="blockquote-wrapper">
           <div className="blockquote">
             <h3>
-              Revista will remain free forever. Thank you to all of our
-              supporters and maintainers!
+              "Plato alisema utofsuti unao tugawa sisi 
+              binadamu na wanya ni uwezo wetu waku ongea
+               ambao wao hawana". Mimi naongezea ni uwezo wetu wa
+              kuandika ambao wao hawana!
               <br aria-hidden="true" />
               <br aria-hidden="true" />
               Best of all, Revista is completely open source! Anyone can
