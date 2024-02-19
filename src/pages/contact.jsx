@@ -132,9 +132,9 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
         <div className="blockquote-wrapper">
           <div className="blockquote">
             <h3>
-              "Plato alisema utofsuti unao tugawa sisi 
-              binadamu na wanya ni uwezo wetu waku ongea
-               ambao wao hawana". Mimi naongezea ni uwezo wetu wa
+              "Plato alisema utofauti unao tugawa sisi 
+              binadamu na wanyama ni uwezo wetu waku ongea
+               ambao wao hawana". Sisi tunaongezea ni uwezo wetu wa
               kuandika ambao wao hawana!
               <br aria-hidden="true" />
               <br aria-hidden="true" />
