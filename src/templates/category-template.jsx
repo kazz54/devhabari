@@ -23,8 +23,8 @@ const CategoryTemplate = props => {
         </CategoryPostsStyles>
       </Layout>
       <Seo
-        title={`${category} | Revista`}
-        description={`Top Resources to Learn ${category} for free.`}
+        title={`${category} | DevHabari`}
+        description={`Jukwaa lakujifunza ${category} bure.`}
       />
     </>
   )
