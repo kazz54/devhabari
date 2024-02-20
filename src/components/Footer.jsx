@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="footer-links">
         <div>
             
-
+          <p>
            We are also an{' '}
                 <a
                   href="https://github.com/chrisnmorrison/revista-gatsby-blog-magazine"
@@ -25,7 +25,7 @@ const Footer = () => {
                 >
                   open-source blog template
                 </a>
-          
+              </p>
           </div>
           
        
