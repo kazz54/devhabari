@@ -12,7 +12,7 @@ const contact = () => {
     <Layout>
       <Wrapper>
         <Seo
-          title="Kuhusu Sisi | DevHabari Jarida la tekinologia"
+          title="Kuhusu Sisi | DevHabari Jarida La Tekinologia"
           description="Jarida la wazi la wasanidi kwenye jamii"
         />
         <div className="container support-container">
@@ -97,7 +97,7 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
                   />
                 </div>
                 <div>
-                  <h2 className="support-title">Share na ulimwengu</h2>
+                  <h2 className="support-title">Share na dunia</h2>
                   <p>
                     Kizuri kula na? kama umependa kazi zetu, share
                     makala zetu kwa marafiki, ndugu na jamaa, kwenye mitandao yote ya kijamii, na
@@ -115,7 +115,7 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
               "Plato alisema utofauti unao tugawa sisi 
               binadamu na wanyama ni uwezo wetu waku ongea
                ambao wao hawana".Sisi tunaongezea "ni uwezo wetu wa
-              kuandika ambao wao hawana"!
+              kuandika ambao wao hawana!"
               <br aria-hidden="true" />
               <br aria-hidden="true" />
               
