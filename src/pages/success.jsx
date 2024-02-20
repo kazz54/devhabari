@@ -7,9 +7,9 @@ const Success = () => {
     <Layout>
       <Styles className="success-page">
         <div className="page-center">
-          <h2 className="received">Thank you for contacting us, we have received your submission! </h2>
+          <h2 className="received">Asante kwaku wasiliana nasi, tumepokea ujumbe wako uliyo utuma! </h2>
           <Link to="/" className="btn btn-outline-primary">
-            back home
+            rudi nyumbani
           </Link>
         </div>
       </Styles>
