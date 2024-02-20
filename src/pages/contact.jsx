@@ -21,7 +21,7 @@ const contact = () => {
               <h1 className="section-title categories-title">Jarida letu</h1>
           
               <p>
-               Jarida lililo andaliwa kwa lengo la kubadilishana 
+               DevHabari ni jarida la mtandaoni lililo andaliwa kwa lengo la kubadilishana 
 
               Ujuzi inapokuja kwenye swala lakutumia tekinologia Ili kutatua changamoto mbali mbali! 
               </p>
@@ -114,8 +114,8 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
             <h3>
               "Plato alisema utofauti unao tugawa sisi 
               binadamu na wanyama ni uwezo wetu waku ongea
-               ambao wao hawana". Sisi tunaongezea ni uwezo wetu wa
-              kuandika ambao wao hawana!
+               ambao wao hawana".<p> &mdash; <strong>Sisi tunaongezea ni uwezo wetu wa
+              kuandika ambao wao hawana!</strong></p>
               <br aria-hidden="true" />
               <br aria-hidden="true" />
               
