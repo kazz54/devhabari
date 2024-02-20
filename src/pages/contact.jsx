@@ -50,12 +50,25 @@ const contact = () => {
             
                     
                   </p>
-                  
+                 
                 </div>
               </div>
               {/* Item */}
               <div className="support-item">
-                
+                <div>
+                  <a
+                    className="support-link"
+                    href="https://github.com/chrisnmorrison/revista-gatsby-blog-magazine/blob/main/CONTRIBUTING.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={Github}
+                      alt="github logo"
+                      className="support-img"
+                    />
+                  </a>
+                </div>
                 <div>
                   <h2 className="support-title">Mikakati</h2>
                   <p>
@@ -70,18 +83,25 @@ kwa mantiki hiyo basi sisi tumeamua kuzisimulia(chambua)/"fafanua" kwa lugha ya 
 ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia makala hizi na hatimaye kunufaika nazo kwa namna moja au nyingine.
               
                   </p>
-                  
+                 
+               
                 </div>
               </div>
               {/* Item */}
               <div className="support-item">
-                
                 <div>
-                  <h2 className="support-title">Share us with the world</h2>
+                  <img
+                    src={SocialMedia}
+                    alt="various social media icons"
+                    className="support-img"
+                  />
+                </div>
+                <div>
+                  <h2 className="support-title">Share na ulimwengu</h2>
                   <p>
-                    Who doesn't like free stuff? If you like our work, share
-                    our articles with your friends, family, on Reddit, or
-                    anywhere else. This is the easiest way to support us!
+                    Kizuri kula na? kama umependa kazi zetu, share
+                    makala zetu kwa marafiki, ndugu na jamaa, kwenye mitandao yote ya kijamii, na
+                    kwingineko. Njia mojawapo ya kutuunga mkono!
                   </p>
                 </div>
               </div>
@@ -98,9 +118,23 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
               kuandika ambao wao hawana!
               <br aria-hidden="true" />
               <br aria-hidden="true" />
-             
+              
             </h3>
-            
+            <h4>
+              &mdash; <strong>Chris Morrison</strong>
+              <br aria-hidden="true" />
+              <em>
+                
+                <a
+                  href="https://mesmerdesign.ca"
+                  className="support-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  DevHabari
+                </a>
+              </em>
+            </h4>
           </div>
         </div>
         <ContactForm />
