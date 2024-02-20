@@ -33,7 +33,8 @@ const Footer = () => {
           &copy;2022-{new Date().getFullYear()} Devhabri,haki zote zimehifadhiwa.
         </p>
       </div>
-      </div>    
+      </div>
+        </div>
     </FooterStyles>
   )
 }
