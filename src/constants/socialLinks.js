@@ -48,7 +48,7 @@ const SocialLinks = () => {
             rel="noopener noreferrer"
             aria-label="Link to Twitter"
           >
-            <FaTwitterSquare className="social-icon twitter-icon"></FaTwitterSquare>
+            <FaTwitterSquare className="social-icon reddit-icon"></FaTwitterSquare>
           </a>
         </li>
       </ul>
