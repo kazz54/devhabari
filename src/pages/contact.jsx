@@ -114,8 +114,8 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
             <h3>
               "Plato alisema utofauti unao tugawa sisi 
               binadamu na wanyama ni uwezo wetu waku ongea
-               ambao wao hawana".<p> Sisi tunaongezea "ni uwezo wetu wa
-              kuandika ambao wao hawana"!</p>
+               ambao wao hawana".Sisi tunaongezea "ni uwezo wetu wa
+              kuandika ambao wao hawana"!
               <br aria-hidden="true" />
               <br aria-hidden="true" />
               
