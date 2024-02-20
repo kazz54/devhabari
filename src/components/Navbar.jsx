@@ -45,7 +45,7 @@ const Navbar = ({ toggle }) => {
             className="support-us-link not-blue"
             target="_blank"
             rel="noreferrer noopener"
-            to="/support-us"
+            to="/kuhusu-sisi"
 
             // to="https://www.buymeacoffee.com/chrismorrison"
           >
