@@ -13,7 +13,7 @@ const SocialLinks = () => {
       <ul className="nav-icons">
         <li>
           <a
-            href="https://github.com/chrisnmorrison/revista-gatsby-blog-magazine"
+            href="https://github.com/devhabari101/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to Github"
@@ -21,19 +21,10 @@ const SocialLinks = () => {
             <FaGithubSquare className="social-icon github-icon"></FaGithubSquare>
           </a>
         </li>
-        <li>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Link to Subreddit"
-          >
-            <FaRedditSquare className="social-icon reddit-icon"></FaRedditSquare>
-          </a>
-        </li>
+       
          <li>
           <a
-            href="#"
+            href="https://mastodon.social/@qwembe"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to Twitter"
@@ -43,7 +34,7 @@ const SocialLinks = () => {
         </li>      
         <li>
           <a
-            href="#"
+            href="https://mastodon.social/@qwembe"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Link to Twitter"
