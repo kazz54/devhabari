@@ -50,32 +50,12 @@ const contact = () => {
             
                     
                   </p>
-                  <a
-                    className="support-link"
-                    href="https://www.buymeacoffee.com/chrismorrison"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Buy Me a Coffee
-                  </a>
+                  
                 </div>
               </div>
               {/* Item */}
               <div className="support-item">
-                <div>
-                  <a
-                    className="support-link"
-                    href="https://github.com/chrisnmorrison/revista-gatsby-blog-magazine/blob/main/CONTRIBUTING.md"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={Github}
-                      alt="github logo"
-                      className="support-img"
-                    />
-                  </a>
-                </div>
+                
                 <div>
                   <h2 className="support-title">Mikakati</h2>
                   <p>
@@ -90,32 +70,12 @@ kwa mantiki hiyo basi sisi tumeamua kuzisimulia(chambua)/"fafanua" kwa lugha ya 
 ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia makala hizi na hatimaye kunufaika nazo kwa namna moja au nyingine.
               
                   </p>
-                  <p>
-                    Don't forget to{' '}
-                    <a href="https://github.com/chrisnmorrison/revista-gatsby-blog-magazine">
-                      star me on Github
-                    </a>
-                    !
-                  </p>
-                  <a
-                    className="support-link"
-                    href="https://github.com/chrisnmorrison/revista-gatsby-blog-magazine/blob/main/CONTRIBUTING.md"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Find out how to contribute
-                  </a>
+                  
                 </div>
               </div>
               {/* Item */}
               <div className="support-item">
-                <div>
-                  <img
-                    src={SocialMedia}
-                    alt="various social media icons"
-                    className="support-img"
-                  />
-                </div>
+                
                 <div>
                   <h2 className="support-title">Share us with the world</h2>
                   <p>
@@ -138,26 +98,9 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
               kuandika ambao wao hawana!
               <br aria-hidden="true" />
               <br aria-hidden="true" />
-              Best of all, Revista is completely open source! Anyone can
-              contribute, or if you have grander ideas, clone our project and
-              create your own dream project. Let's build off of each other to
-              create amazing, meaningful online services.
+             
             </h3>
-            <h4>
-              &mdash; <strong>Chris Morrison</strong>
-              <br aria-hidden="true" />
-              <em>
-                Creator of Revista &amp; owner of <br aria-hidden="true" />
-                <a
-                  href="https://mesmerdesign.ca"
-                  className="support-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Mesmer Design
-                </a>
-              </em>
-            </h4>
+            
           </div>
         </div>
         <ContactForm />
