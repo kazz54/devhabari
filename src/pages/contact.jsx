@@ -12,8 +12,8 @@ const contact = () => {
     <Layout>
       <Wrapper>
         <Seo
-          title="Kuhusu Sisi | DevHabari"
-          description="There are several ways you can support Revista"
+          title="Kuhusu Sisi | DevHabari Mazungumzo Ya Technohama Na Mifumoyake"
+          description="Jarida la wazi la wasanidi kwenye jamii"
         />
         <div className="container support-container">
           <div className="row">
@@ -23,7 +23,7 @@ const contact = () => {
               <p>
                DevHabari ni jarida la mtandaoni lililo andaliwa kwa lengo la kubadilishana 
 
-              Ujuzi inapokuja kwenye swala lakutumia tekinologia Ili kutatua changamoto mbali mbali! 
+              Ujuzi inapokuja kwenye swala la kutumia tekinologia Ili kutatua changamoto mbali mbali! 
               </p>
               <p>Kufikia azima hiyo, haya ni maono na mikakati ya DevHabari:</p>
 
@@ -38,7 +38,7 @@ const contact = () => {
                   >
                     <img
                       src={Bmc}
-                      alt="buy me a coffee logo"
+                      alt="maono logo"
                       className="support-img"
                     />
                   </a>
@@ -64,7 +64,7 @@ const contact = () => {
                   >
                     <img
                       src={Github}
-                      alt="github logo"
+                      alt="mikakati logo"
                       className="support-img"
                     />
                   </a>
