@@ -101,7 +101,7 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
                   <p>
                     Kizuri kula na? kama umependa kazi zetu, share
                     makala zetu kwa marafiki, ndugu na jamaa, kwenye mitandao yote ya kijamii, na
-                    kwingineko. Njia mojawapo ya kutuunga mkono!
+                    kwingineko. Ni njia mojawapo ya kutuunga mkono!
                   </p>
                 </div>
               </div>
@@ -114,14 +114,14 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
             <h3>
               "Plato alisema utofauti unao tugawa sisi 
               binadamu na wanyama ni uwezo wetu waku ongea
-               ambao wao hawana".<p> &mdash; <strong>Sisi tunaongezea ni uwezo wetu wa
-              kuandika ambao wao hawana!</strong></p>
+               ambao wao hawana".<p> Sisi tunaongezea "ni uwezo wetu wa
+              kuandika ambao wao hawana"!</p>
               <br aria-hidden="true" />
               <br aria-hidden="true" />
               
             </h3>
             <h4>
-              &mdash; <strong>Chris Morrison</strong>
+              
               <br aria-hidden="true" />
               <em>
                 
