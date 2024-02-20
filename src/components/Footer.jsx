@@ -17,7 +17,7 @@ const Footer = () => {
         <div>
             
          
-                <a
+                <a className="footer-link"
                   href="https://github.com/chrisnmorrison/revista-gatsby-blog-magazine"
                   target="_blank"
                   rel="noopener noreferrer"
