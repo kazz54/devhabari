@@ -42,8 +42,8 @@ export default class Index extends React.Component {
           <section className="get-in-touch">
             <h1 className="title">Get in touch</h1>
             <p className="note subtitle">
-              Have a question? We'd love to hear from you. Send us a message and
-              we'll respond as soon as possible.
+              Una swali, maoni au ushauri? tungependa kusikia kutoka kwako. Tutumie ujumbe nasi
+              tuta kurudia haraka iwezekanyo.
             </p>
             <div className="column  is-two-thirds">
               {this.state.feedbackMsg && <p>{this.state.feedbackMsg}</p>}
@@ -78,7 +78,7 @@ export default class Index extends React.Component {
                       onChange={this.handleChange}
                       id={"name"}
                       required={true}
-                      placeholder="Name"
+                      placeholder="Jina lako"
                     />
                   </div>
                 </div>
@@ -94,7 +94,7 @@ export default class Index extends React.Component {
                       onChange={this.handleChange}
                       id={"email"}
                       required={true}
-                      placeholder="Email"
+                      placeholder="Email yako"
                     />
                   </div>
                 </div>
@@ -120,7 +120,7 @@ export default class Index extends React.Component {
                 </div>
               </form>
             <p className="note">
-              Powered by{' '}
+              Imewezeshwa na{' '}
               <a
                 className="link"
                 href="https://www.netlify.com/products/forms/"
