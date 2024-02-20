@@ -12,7 +12,7 @@ const contact = () => {
     <Layout>
       <Wrapper>
         <Seo
-          title="Kuhusu Sisi | DevHabari Mazungumzo Ya Technohama Na Mifumoyake"
+          title="Kuhusu Sisi | DevHabari Jarida la tekinologia"
           description="Jarida la wazi la wasanidi kwenye jamii"
         />
         <div className="container support-container">
@@ -121,19 +121,9 @@ ili iwe rahisi kwa mtu yoyote yule amabaye anajua lughaa ya kiswahili kufuatilia
               
             </h3>
             <h4>
-              
+              &mdash; <strong>DevHabari101</strong>
               <br aria-hidden="true" />
-              <em>
-                
-                <a
-                  href="https://mesmerdesign.ca"
-                  className="support-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  DevHabari
-                </a>
-              </em>
+              
             </h4>
           </div>
         </div>
