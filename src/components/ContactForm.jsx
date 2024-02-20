@@ -40,7 +40,7 @@ export default class Index extends React.Component {
       <Wrapper>
         <div>
           <section className="get-in-touch">
-            <h1 className="title">Get in touch</h1>
+            <h1 className="title">Wasiliana nasi</h1>
             <p className="note subtitle">
               Una swali, maoni au ushauri? tungependa kusikia kutoka kwako. Tutumie ujumbe nasi
               tuta kurudia haraka iwezekanyo.
@@ -109,13 +109,13 @@ export default class Index extends React.Component {
                       onChange={this.handleChange}
                       id={"message"}
                       required={true}
-                      placeholder="Message"
+                      placeholder="Andika Ujumbe"
                     />
                   </div>
                 </div>
                 <div className="form-field submit col x-100 align-center">
                   <button className="btn btn-outline-primary contact-btn" type="submit">
-                    Send
+                    Tuma
                   </button>
                 </div>
               </form>
