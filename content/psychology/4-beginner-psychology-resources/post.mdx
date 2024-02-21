@@ -13,161 +13,171 @@ popular: false
 ![](https://1.bp.blogspot.com/-MzRpzIRzmyQ/XPRAQ5AJm7I/AAAAAAAAMlU/w1_joHJXzmQ_dS_JxpdBJx4i6Cc-yBalACLcBGAs/s400/communication-4237439_1280.jpg)
 
   
-This post begins with already working project and app's, I found that there some few requirement's  
-that my project needed to handle and the best option for those requirement's was to use the Django's  Rest Framework. The way that I will tackle this task is more specific to the needs of the project rather than a one to one how to..., that being said you can still follow along, the approach that I'm going to use is easy to follow since I'll be providing a lot of information a log the way for better understanding of the why and how.....this code is available on [Github](https://github.com/kazz54/REST-API), enough with the alerts and on with the show.  
-  
-**Note:** If you would want to mimic the exactly settings then you will need to enable user authentication on your project you can [follow this link for details](https://cloudtails.blogspot.com/2019/05/django-user-authentication-how-to-login.html).   
-  
-Start with the DRF (Django Rest Framework) installation  
-  
-`pip3 install djangorestframework`  
+
+<a href="https://1.bp.blogspot.com/-MzRpzIRzmyQ/XPRAQ5AJm7I/AAAAAAAAMlU/w1_joHJXzmQ_dS_JxpdBJx4i6Cc-yBalACLcBGAs/s1600/communication-4237439_1280.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1280" height="240" src="https://1.bp.blogspot.com/-MzRpzIRzmyQ/XPRAQ5AJm7I/AAAAAAAAMlU/w1_joHJXzmQ_dS_JxpdBJx4i6Cc-yBalACLcBGAs/s400/communication-4237439_1280.jpg" width="400" /></a>
+
+This post begins with already working project and app's, I found that there some few requirement's
+that my project needed to handle and the best option for those requirement's was to use the Django's&nbsp; Rest Framework. The way that I will tackle this task is more specific to the needs of the project rather than a one to one how to..., that being said you can still follow along, the approach that I'm going to use is easy to follow since I'll be providing a lot of information a log the way for better understanding of the why and how.....this code is available on <a href="https://github.com/kazz54/REST-API" target="_blank">Github</a>, enough with the alerts and on with the show.
+
+If you would want to mimic the exactly settings then you will need to enable user authentication on your project you can <a href="https://cloudtails.blogspot.com/2019/05/django-user-authentication-how-to-login.html" target="_blank">follow this link for details</a>.&nbsp;
+
+Start with the DRF (Django Rest Framework) installation
+
+pip3 install djangorestframework
+
+For our app to use DRF, we'll have to add rest_framework into our settings.py. 
 
   
 
-For our app to use DRF, we'll have to add `rest_framework` into our `settings.py.` 
+nano bio_metric/settings.py
 
-  
+INSTALLED_APPS = [
 
-`nano bio_metric/settings.py`
+ 'django.contrib.admin',
 
-  
+ 'django.contrib.auth',
 
-`INSTALLED_APPS = [`
+ 'django.contrib.contenttypes',
 
-    'django.contrib.admin',
+ 'django.contrib.sessions',
 
-    'django.contrib.auth',
+ 'django.contrib.messages',
 
-    'django.contrib.contenttypes',
+ 'django.contrib.staticfiles',
 
-    'django.contrib.sessions',
+ 'rest_framework', # new
 
-    'django.contrib.messages',
+ 'accounts',
 
-    'django.contrib.staticfiles',
+ 'base',
 
-    'rest\_framework', ------ \# new
+]
 
-    'accounts',
 
-    'base',
 
-\]
 
-  
 
-My model look's like this  
 
-  
+My model look's like this
 
-`nano base/models.py`
 
-  
 
-`from django.conf import settings`
+nano base/models.py
+
+
+
+
+from django.conf import settings
 
 from django.db import models
 
 from django.utils import timezone
 
-  
 
-  
+
+
 
 class Post(models.Model):
 
-    author = models.ForeignKey(settings.AUTH\_USER\_MODEL, on\_delete=models.CASCADE)
+ author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
-    title = models.CharField(max\_length=50)
+ title = models.CharField(max_length=50)
 
-    text = models.CharField(max\_length=200)
+ text = models.CharField(max_length=200)
 
-    created\_date = models.DateTimeField(default=timezone.now)
+ created_date = models.DateTimeField(default=timezone.now)
 
-  
 
-"""Return a human readable representation of the model instance."""  
+ style="color: lime;">""" style="color: red;">Return a human readable representation of the model instance. style="color: lime;">"""
 
-    def \_\_str\_\_(self):
+ def __str__(self):
 
-        return self.title
+  return self.title
 
-  
-  
 
-**Serialization**
 
-A Serializer transforms model instances into JSON or XML. This the real great function that Django Rest Framework provides for us since ultimately a web API endpoint returns data we can understand, like JSON or XML and available HTTP verbs.  
 
-  
 
-  
+
+
+Serialization
+
+A Serializer transforms model instances into JSON or XML. This the real great function  that Django Rest Framework provides for us since ultimately a web API endpoint returns data we can understand, like JSON or XML and available HTTP verbs.
+
+
+
+
 
 Adding endpoints to the Post and User models
 
-  
 
-`nano base/serializers.py`
 
-  
+nano base/serializers.py
 
-`from django.contrib.auth.models import User`
 
-from rest\_framework import serializers
+
+from django.contrib.auth.models import User
+
+
+from rest_framework import serializers
 
 from base.models import Post
 
-  
 
-  
 
-  
+
+
+
 
 class PostSerializer(serializers.ModelSerializer):
 
-    author = serializers.ReadOnlyField(source='author.username') 
+ author = serializers.ReadOnlyField(source='author.username')&nbsp;
 
-    class Meta:
+ class Meta:
 
-        model = Post
+  model = Post
 
-        fields = ('id', 'title', 'text', 'author', )
+  fields = ('id', 'title', 'text', 'author', )
 
-  
 
-  
+
+
 
 class UserSerializer(serializers.ModelSerializer):
 
-    posts = serializers.PrimaryKeyRelatedField(
+ posts = serializers.PrimaryKeyRelatedField(
 
-        many=True, queryset=Post.objects.all())
+  many=True, queryset=Post.objects.all())
 
-  
 
-    class Meta:
 
-        model = User
+ class Meta:
 
-        fields = ('id', 'username', 'posts')
+  model = User
 
-  
+  fields = ('id', 'username', 'posts')
 
-  
 
-Since posts is a reverse relationship on the default Django User model, it will not be included by default using the ModelSerializer class, we need to add an explicit field for it.  
 
-  
 
-`nano base/views.py`
 
-  
 
-`from django.conf import settings`
+
+
+Since posts is a reverse relationship on the default Django User model, it will not be included by default using the ModelSerializer class, we need to add an explicit field for it.
+
+
+
+nano base/views.py
+
+
+
+
+from django.conf import settings
 
 from django.utils import timezone
 
-from django.shortcuts import render, get\_object\_or\_404
+from django.shortcuts import render, get_object_or_404
 
 from .models import Post
 
@@ -175,286 +185,298 @@ from .forms import PostForm
 
 from django.shortcuts import redirect
 
-from django.contrib.auth.models import User **\# new**
+from django.contrib.auth.models import User <b> style="color: red;"># new</b>
 
-from rest\_framework import generics, permissions **\# new**
+from rest_framework import generics, permissions <b> style="color: red;"># new</b>
 
-from .serializers import PostSerializer, UserSerializer **\# new**
+from .serializers import PostSerializer, UserSerializer <b> style="color: red;"># new</b>
 
-\# Create your views here.
+# Create your views here.
 
-  
 
-  
 
-def post\_detail(request, pk):
 
-    post = get\_object\_or\_404(Post, pk=pk)
 
-    return render(request, 'base/post\_detail.html', {'post': post})
+def post_detail(request, pk):
 
-  
+ post = get_object_or_404(Post, pk=pk)
 
-  
+ return render(request, 'base/post_detail.html', {'post': post})
 
-def post\_new(request):
 
-    if request.method == "POST":
 
-        form = PostForm(request.POST)
 
-        if form.is\_valid():
 
-            post = form.save(commit=False)
+def post_new(request):
 
-            post.author = request.user
+ if request.method == "POST":
 
-            post.published\_date = timezone.now()
+  form = PostForm(request.POST)
 
-            post.save()
+  if form.is_valid():
 
-            return redirect('post\_detail', pk=post.pk)
+   post = form.save(commit=False)
 
-    else:
+   post.author = request.user
 
-        form = PostForm()
+   post.published_date = timezone.now()
 
-    return render(request, 'base/post\_edit.html', {'form': form})
+   post.save()
 
-  
+   return redirect('post_detail', pk=post.pk)
 
-def post\_edit(request, pk):
+ else:
 
-    post = get\_object\_or\_404(Post, pk=pk)
+  form = PostForm()
 
-    if request.method == "POST":
+ return render(request, 'base/post_edit.html', {'form': form})
 
-        form = PostForm(request.POST, instance=post)
 
-        if form.is\_valid():
 
-            post = form.save(commit=False)
+def post_edit(request, pk):
 
-            post.author = request.user
+ post = get_object_or_404(Post, pk=pk)
 
-            post.published\_date = timezone.now()
+ if request.method == "POST":
 
-            post.save()
+  form = PostForm(request.POST, instance=post)
 
-            return redirect('post\_detail', pk=post.pk)
+  if form.is_valid():
 
-    else:
+   post = form.save(commit=False)
 
-        form = PostForm(instance=post)
+   post.author = request.user
 
-    return render(request, 'base/post\_edit.html', {'form': form})
+   post.published_date = timezone.now()
 
-  
+   post.save()
 
-  
+   return redirect('post_detail', pk=post.pk)
 
-  
+ else:
+
+  form = PostForm(instance=post)
+
+ return render(request, 'base/post_edit.html', {'form': form})
+
+
+
+
+
+
 
 class PostList(generics.ListCreateAPIView):
 
-    queryset = Post.objects.all()
+ queryset = Post.objects.all()
 
-    serializer\_class = PostSerializer
+ serializer_class = PostSerializer
 
-    permission\_classes = (permissions.IsAuthenticatedOrReadOnly,)
+ permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
-  
 
-    def perform\_create(self, serializer): **\# new**
 
-        serializer.save(author=self.request.user)
+ def perform_create(self, serializer): <b> style="color: red;"># new</b>
 
-  
+  serializer.save(author=self.request.user)
+
+
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
 
-    queryset = Post.objects.all()
+ queryset = Post.objects.all()
 
-    serializer\_class = PostSerializer
+ serializer_class = PostSerializer
 
-    permission\_classes = (permissions.IsAuthenticatedOrReadOnly,) **\# new**
+ permission_classes = (permissions.IsAuthenticatedOrReadOnly,) <b> style="color: red;"># new</b>
 
-  
 
-class UserList(generics.ListAPIView): **\# new**
 
-    queryset = User.objects.all()
+class UserList(generics.ListAPIView): <b> style="color: red;"># new</b>
 
-    serializer\_class = UserSerializer
+ queryset = User.objects.all()
 
-  
+ serializer_class = UserSerializer
 
-class UserDetail(generics.RetrieveAPIView): **\# new**
 
-    queryset = User.objects.all()
 
-    serializer\_class = UserSerializer
+class UserDetail(generics.RetrieveAPIView): <b> style="color: red;"># new</b>
 
-  
+ queryset = User.objects.all()
 
-**Note on the view above I've used [ListCreateAPIView](http://www.django-rest-framework.org/api-guide/generic-views/#listcreateapiview) to create a read-only endpoint that lists all available Post instances and then [RetrieveUpdateDestroyAPIView](http://www.django-rest-framework.org/api-guide/generic-views/#retrieveupdatedestroyapiview) for a detail view of individual posts which supports CRUD-like functionality.**
+ serializer_class = UserSerializer
 
-  
 
-`nano base/urls.py`
 
-  
 
-`from django.urls import path` 
+
+
+Note on the view above I've used&nbsp;<a href="http://www.django-rest-framework.org/api-guide/generic-views/#listcreateapiview">ListCreateAPIView</a>&nbsp;to create a read-only endpoint that lists all available Post instances and then&nbsp;<a href="http://www.django-rest-framework.org/api-guide/generic-views/#retrieveupdatedestroyapiview">RetrieveUpdateDestroyAPIView</a>&nbsp;for a detail view of individual posts which supports CRUD-like functionality.</b>
+
+
+
+nano base/urls.py
+
+
+
+
+from django.urls import path&nbsp;
 
 from . import views
 
-from rest\_framework.urlpatterns import format\_suffix\_patterns **\# new**
+from rest_framework.urlpatterns import format_suffix_patterns&nbsp;<b> style="color: red;"># new</b>
 
-urlpatterns = \[
+urlpatterns = [
 
-    path('post//', views.post\_detail, name='post\_detail'),
+ path('post/<int:pk>/', views.post_detail, name='post_detail'),</int:pk>
 
-    path('post//edit/', views.post\_edit, name='post\_edit'),
+ path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),</int:pk>
 
-    path('post/new/', views.post\_new, name='post\_new'),
+ path('post/new/', views.post_new, name='post_new'),
 
-    path('posts/', views.PostList.as\_view()), **\# new**
+ path('posts/', views.PostList.as_view()), <b> style="color: red;"># new</b>
 
-    path('posts//', views.PostDetail.as\_view()), **\# new**
+ path('posts/<int:pk>/', views.PostDetail.as_view()), <b> style="color: red;"># new</b></int:pk>
 
-    path('users/', views.UserList.as\_view()), **\# new**
+ path('users/', views.UserList.as_view()),  style="color: red;"><b># new</b>
 
-    path('users//', views.UserDetail.as\_view()), **\# new**
+ path('users/<int:pk>/', views.UserDetail.as_view()), <b> style="color: red;"># new</b></int:pk>
 
-\]
+]
 
-urlpatterns = format\_suffix\_patterns(urlpatterns) **\# new**
+urlpatterns = format_suffix_patterns(urlpatterns)&nbsp;<b> style="color: red;"># new</b>
 
-  
+
+
 
 Adding login to the browsable API
+We can add login to the API page so that we don't have to go to the main site when we want to login,
+to add a login view to the browsable API we need to edit the URLconf in our project-level bio_metric/urls.py file.
 
-We can add login to the API page so that we don't have to go to the main site when we want to login,  
-to add a login view to the browsable API we need to edit the `URLconf` in our project-level `bio_metric/urls.py` file.  
 
-  
 
-Add rest\_framework.urls to the route.
+Add rest_framework.urls to the route.
 
-  
 
-`nano bio_metric/urls.py`
 
-  
+nano bio_metric/urls.py
 
-`from django.contrib import admin`
+
+
+
+from django.contrib import admin
 
 from django.urls import path, include
 
-from django.views.generic.base import TemplateView 
+from django.views.generic.base import TemplateView&nbsp;
 
-  
 
-urlpatterns = \[
 
-    path('base/', include('base.urls')),
+urlpatterns = [
 
-    path('accounts/', include('accounts.urls')), 
+ path('base/', include('base.urls')),
 
-    path('login/', include('rest\_framework.urls')), **\# new**
+ path('accounts/', include('accounts.urls')),&nbsp;
 
-    path('', TemplateView.as\_view(template\_name='home.html'), name='home'), 
+ path('login/', include('rest_framework.urls')),  style="color: red;"><b># new</b>
 
-    path('accounts/', include('django.contrib.auth.urls')), 
+ path('', TemplateView.as_view(template_name='home.html'), name='home'),&nbsp;
 
-    path('admin/', admin.site.urls),
+ path('accounts/', include('django.contrib.auth.urls')),&nbsp;
 
-\]
+ path('admin/', admin.site.urls),
 
-Notice the name "login" above could be anything The important part is that "rest\_framework.urls" .
+]
 
-  
 
-Fire up the server and test **CRUD** functionality
+ Notice the name "login" above could be anything&nbsp;The important part is that "rest_framework.urls" .
 
-  
 
-`python3 manage.py runserver 192.168.0.245:8000`
 
-  
+
+Fire up the server and test CRUD functionality 
+
+
+
+python3 manage.py runserver 192.168.0.245:8000
+
+
 
 Post Lists ----- I get all the posts
 
-![](https://1.bp.blogspot.com/--KxD5qazM3M/XPQXOFzhYuI/AAAAAAAAMjo/6bNXiDFCF-c9HzhkrkN-9N4WAwGW4eDXwCLcBGAs/s320/Screenshot%2B%252820%2529.png)
+<a href="https://1.bp.blogspot.com/--KxD5qazM3M/XPQXOFzhYuI/AAAAAAAAMjo/6bNXiDFCF-c9HzhkrkN-9N4WAwGW4eDXwCLcBGAs/s1600/Screenshot%2B%252820%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="180" src="https://1.bp.blogspot.com/--KxD5qazM3M/XPQXOFzhYuI/AAAAAAAAMjo/6bNXiDFCF-c9HzhkrkN-9N4WAwGW4eDXwCLcBGAs/s320/Screenshot%2B%252820%2529.png" width="320" /></a>
 
 Post detail ----- details of a particular post
-
-![](https://1.bp.blogspot.com/-yVoV1qe6deo/XPQYWfvLk6I/AAAAAAAAMjw/QOPiaXSbqlAnU2sEVuPyTOxQLvlTllUXgCLcBGAs/s320/Screenshot%2B%252821%2529.png)
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://1.bp.blogspot.com/-yVoV1qe6deo/XPQYWfvLk6I/AAAAAAAAMjw/QOPiaXSbqlAnU2sEVuPyTOxQLvlTllUXgCLcBGAs/s1600/Screenshot%2B%252821%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="180" src="https://1.bp.blogspot.com/-yVoV1qe6deo/XPQYWfvLk6I/AAAAAAAAMjw/QOPiaXSbqlAnU2sEVuPyTOxQLvlTllUXgCLcBGAs/s320/Screenshot%2B%252821%2529.png" width="320" /></a>
 
 API login
 
-![](https://1.bp.blogspot.com/-Nu6sLe-M2GI/XPQZHk17lUI/AAAAAAAAMj8/4ZpowqtMxfM-HFwCd_-nlJ1ImO_XLl2zQCLcBGAs/s320/Screenshot%2B%252822%2529.png)
+<a href="https://1.bp.blogspot.com/-Nu6sLe-M2GI/XPQZHk17lUI/AAAAAAAAMj8/4ZpowqtMxfM-HFwCd_-nlJ1ImO_XLl2zQCLcBGAs/s1600/Screenshot%2B%252822%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="180" src="https://1.bp.blogspot.com/-Nu6sLe-M2GI/XPQZHk17lUI/AAAAAAAAMj8/4ZpowqtMxfM-HFwCd_-nlJ1ImO_XLl2zQCLcBGAs/s320/Screenshot%2B%252822%2529.png" width="320" /></a>
 
-User have login 
+User have login&nbsp;
 
-![](https://1.bp.blogspot.com/-hpjmPku3lBc/XPQj3FVtkOI/AAAAAAAAMkw/F20ozeYialYf1Xq92VHQb0PnLxTVJy7CwCLcBGAs/s400/Screenshot%2B%2528231%2529.png)
+<a href="https://1.bp.blogspot.com/-hpjmPku3lBc/XPQj3FVtkOI/AAAAAAAAMkw/F20ozeYialYf1Xq92VHQb0PnLxTVJy7CwCLcBGAs/s1600/Screenshot%2B%2528231%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="225" src="https://1.bp.blogspot.com/-hpjmPku3lBc/XPQj3FVtkOI/AAAAAAAAMkw/F20ozeYialYf1Xq92VHQb0PnLxTVJy7CwCLcBGAs/s400/Screenshot%2B%2528231%2529.png" width="400" /></a>
+<div class="separator" style="clear: both; text-align: justify;">
+ style="text-align: start;">Now you can delete the post
+<div class="separator" style="clear: both; text-align: center;">
 
-Now you can delete the post
 
-![](https://1.bp.blogspot.com/-u9cxTSdzjAg/XPQjc4qTlII/AAAAAAAAMks/dOv-YRXnBQUliPch0qmRZcM_GNu3Et10ACLcBGAs/s320/Screenshot%2B%252824%2529.png)
+<a href="https://1.bp.blogspot.com/-u9cxTSdzjAg/XPQjc4qTlII/AAAAAAAAMks/dOv-YRXnBQUliPch0qmRZcM_GNu3Et10ACLcBGAs/s1600/Screenshot%2B%252824%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="180" src="https://1.bp.blogspot.com/-u9cxTSdzjAg/XPQjc4qTlII/AAAAAAAAMks/dOv-YRXnBQUliPch0qmRZcM_GNu3Et10ACLcBGAs/s320/Screenshot%2B%252824%2529.png" width="320" /></a>
 
 I have deleted one post only two post remaining
 
-![](https://1.bp.blogspot.com/-SqOn11XczXc/XPQjQszK66I/AAAAAAAAMko/c1kFCKah4uIOPW8p_8iBFP2JVFqxFyP6QCLcBGAs/s400/Screenshot%2B%252825%2529.png)
+<a href="https://1.bp.blogspot.com/-SqOn11XczXc/XPQjQszK66I/AAAAAAAAMko/c1kFCKah4uIOPW8p_8iBFP2JVFqxFyP6QCLcBGAs/s1600/Screenshot%2B%252825%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="225" src="https://1.bp.blogspot.com/-SqOn11XczXc/XPQjQszK66I/AAAAAAAAMko/c1kFCKah4uIOPW8p_8iBFP2JVFqxFyP6QCLcBGAs/s400/Screenshot%2B%252825%2529.png" width="400" /></a>
 
 Updating the second post
 
-![](https://1.bp.blogspot.com/-OhYj_hYNf5I/XPQink4X2oI/AAAAAAAAMkk/7aDkLlbN-wsSZiEGHVuTc01nu_IdAB49QCLcBGAs/s400/Screenshot%2B%252826%2529.png)
+<a href="https://1.bp.blogspot.com/-OhYj_hYNf5I/XPQink4X2oI/AAAAAAAAMkk/7aDkLlbN-wsSZiEGHVuTc01nu_IdAB49QCLcBGAs/s1600/Screenshot%2B%252826%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="225" src="https://1.bp.blogspot.com/-OhYj_hYNf5I/XPQink4X2oI/AAAAAAAAMkk/7aDkLlbN-wsSZiEGHVuTc01nu_IdAB49QCLcBGAs/s400/Screenshot%2B%252826%2529.png" width="400" /></a>
 
-  
+Creating a new post
 
-![](https://1.bp.blogspot.com/-1WWjcz-KGcE/XPQiMWhS6qI/AAAAAAAAMkg/lHcSvtaE5moBmhdVC9KUMVM_9V-OSKVTQCLcBGAs/s400/Screenshot%2B%252827%2529.png)
+
+
+<a href="https://1.bp.blogspot.com/-1WWjcz-KGcE/XPQiMWhS6qI/AAAAAAAAMkg/lHcSvtaE5moBmhdVC9KUMVM_9V-OSKVTQCLcBGAs/s1600/Screenshot%2B%252827%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="224" src="https://1.bp.blogspot.com/-1WWjcz-KGcE/XPQiMWhS6qI/AAAAAAAAMkg/lHcSvtaE5moBmhdVC9KUMVM_9V-OSKVTQCLcBGAs/s400/Screenshot%2B%252827%2529.png" width="400" /></a>
 
 New post has been created
 
-  
 
-  
 
-![](https://1.bp.blogspot.com/-EtU7L-QT9IM/XPQhV8EIUMI/AAAAAAAAMkc/mhzR4lpqFB8428TTBiaHjKnvFZfN6zHKACLcBGAs/s400/Screenshot%2B%252828%2529.png)]
+
+
+<a href="https://1.bp.blogspot.com/-EtU7L-QT9IM/XPQhV8EIUMI/AAAAAAAAMkc/mhzR4lpqFB8428TTBiaHjKnvFZfN6zHKACLcBGAs/s1600/Screenshot%2B%252828%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="223" src="https://1.bp.blogspot.com/-EtU7L-QT9IM/XPQhV8EIUMI/AAAAAAAAMkc/mhzR4lpqFB8428TTBiaHjKnvFZfN6zHKACLcBGAs/s400/Screenshot%2B%252828%2529.png" width="400" /></a>
+
 List of the current posts
 
-![](https://1.bp.blogspot.com/-LHfz7o5Xsac/XPQl2reNuzI/AAAAAAAAMk8/WGhi4UOifjklmKk0DOdz9CWRycj9L2CiACLcBGAs/s400/Screenshot%2B%252820%2529.png)
- The JSON file  
-  
-  
+<a href="https://1.bp.blogspot.com/-LHfz7o5Xsac/XPQl2reNuzI/AAAAAAAAMk8/WGhi4UOifjklmKk0DOdz9CWRycj9L2CiACLcBGAs/s1600/Screenshot%2B%252820%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="224" src="https://1.bp.blogspot.com/-LHfz7o5Xsac/XPQl2reNuzI/AAAAAAAAMk8/WGhi4UOifjklmKk0DOdz9CWRycj9L2CiACLcBGAs/s400/Screenshot%2B%252820%2529.png" width="400" /></a>
+&nbsp;The JSON file
 
-![](https://1.bp.blogspot.com/-XKHzVm-PAoM/XPQmr3A4nWI/AAAAAAAAMlA/-tU7nSzIQkgz4-f-nrtwG0pGgl8LG-YLQCLcBGAs/s400/Screenshot%2B%252830%2529.png)
+
+
+<a href="https://1.bp.blogspot.com/-XKHzVm-PAoM/XPQmr3A4nWI/AAAAAAAAMlA/-tU7nSzIQkgz4-f-nrtwG0pGgl8LG-YLQCLcBGAs/s1600/Screenshot%2B%252830%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="225" src="https://1.bp.blogspot.com/-XKHzVm-PAoM/XPQmr3A4nWI/AAAAAAAAMlA/-tU7nSzIQkgz4-f-nrtwG0pGgl8LG-YLQCLcBGAs/s400/Screenshot%2B%252830%2529.png" width="400" /></a>
 
 Again here the List of the current posts same info being returned by the JSON file above
 
-![](https://1.bp.blogspot.com/-tylkhOpOtD4/XPQm73Kiq4I/AAAAAAAAMlE/_qt-xC1Nu5wAkdqdNL6K_lWbjWPb0gjrgCLcBGAs/s400/Screenshot%2B%252831%2529.png)
+<a href="https://1.bp.blogspot.com/-tylkhOpOtD4/XPQm73Kiq4I/AAAAAAAAMlE/_qt-xC1Nu5wAkdqdNL6K_lWbjWPb0gjrgCLcBGAs/s1600/Screenshot%2B%252831%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="224" src="https://1.bp.blogspot.com/-tylkhOpOtD4/XPQm73Kiq4I/AAAAAAAAMlE/_qt-xC1Nu5wAkdqdNL6K_lWbjWPb0gjrgCLcBGAs/s400/Screenshot%2B%252831%2529.png" width="400" /></a>
 
 We cant enumerate the deleted or non existing content by id
 
-![](https://1.bp.blogspot.com/-Ym6X9gmwn3Y/XPQn2Kn_w7I/AAAAAAAAMlI/s6ka68PdBUUDsp2jKojlZg8YEExt383KgCLcBGAs/s400/Screenshot%2B%252832%2529.png)
+<a href="https://1.bp.blogspot.com/-Ym6X9gmwn3Y/XPQn2Kn_w7I/AAAAAAAAMlI/s6ka68PdBUUDsp2jKojlZg8YEExt383KgCLcBGAs/s1600/Screenshot%2B%252832%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="400" src="https://1.bp.blogspot.com/-Ym6X9gmwn3Y/XPQn2Kn_w7I/AAAAAAAAMlI/s6ka68PdBUUDsp2jKojlZg8YEExt383KgCLcBGAs/s400/Screenshot%2B%252832%2529.png" width="400" /></a>
 
 We can enumerate existing content by the id
 
-![](https://1.bp.blogspot.com/-ntYFGzLG1Tg/XPQoWQWbdqI/AAAAAAAAMlM/BJ1kbYocSpw3e-p6gKWm8W3VgmHvj1ISQCLcBGAs/s400/Screenshot%2B%252833%2529.png)
-  
-  
-
-  
-
-  
-
-Associating Posts with Users
-
-if you want to enumerate users you will run into this  `'User' object has no attribute 'posts'`
-
-Based on my requirement's this is enough. I can do the crud functionality on the Post if you want to do the crud functionally to the user's as well you will need to do some modification on the `serializers.py` and `views.py` you may olso want to consider securing the API probably with https. Very unfortunate those topic are out of scope for this post.
+<a href="https://1.bp.blogspot.com/-ntYFGzLG1Tg/XPQoWQWbdqI/AAAAAAAAMlM/BJ1kbYocSpw3e-p6gKWm8W3VgmHvj1ISQCLcBGAs/s1600/Screenshot%2B%252833%2529.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="224" src="https://1.bp.blogspot.com/-ntYFGzLG1Tg/XPQoWQWbdqI/AAAAAAAAMlM/BJ1kbYocSpw3e-p6gKWm8W3VgmHvj1ISQCLcBGAs/s400/Screenshot%2B%252833%2529.png" width="400" /></a>
 
 
+
+
+
+
+
+
+ Associating Posts with Users
+
+
+ if you want to enumerate users you will run into this&nbsp; 'User' object has no attribute 'posts'
+
+ Based on my requirement's this is enough. I can do the crud functionality on the Post if you want to do the crud functionally to the user's as well you will need to do some modification on the serializers.py style="color: red;"> and views.py  style="color: red;">you may olso want to consider securing the API probably with https.&nbsp;Very unfortunate those topic are out of scope for this post.
 
