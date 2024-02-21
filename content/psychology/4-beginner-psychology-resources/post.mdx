@@ -16,11 +16,17 @@ popular: false
 
 ![](https://1.bp.blogspot.com/-MzRpzIRzmyQ/XPRAQ5AJm7I/AAAAAAAAMlU/w1_joHJXzmQ_dS_JxpdBJx4i6Cc-yBalACLcBGAs/s1600/communication-4237439_1280.jpg)
 
+
+[Link Text](http://dev.nodeca.com)
+
+[Link with Title](http://nodeca.github.io/pica/demo/ 'Title Text!')
+
+
 This post begins with already working project and app's, I found that there some few requirement's
-that my project needed to handle and the best option for those requirement's was to use the Django's&nbsp; Rest Framework. The way that I will tackle this task is more specific to the needs of the project rather than a one to one how to..., that being said you can still follow along, the approach that I'm going to use is easy to follow since I'll be providing a lot of information a log the way for better understanding of the why and how.....this code is available on <a href="https://github.com/kazz54/REST-API", enough with the alerts and on with the show.
+that my project needed to handle and the best option for those requirement's was to use the Django's&nbsp; Rest Framework. The way that I will tackle this task is more specific to the needs of the project rather than a one to one how to..., that being said you can still follow along, the approach that I'm going to use is easy to follow since I'll be providing a lot of information a log the way for better understanding of the why and how.....this code is available on [](https://github.com/kazz54/REST-API), enough with the alerts and on with the show.
 
 If you would want to mimic the exactly settings then you will need to enable user authentication on your project you can  
-(https://cloudtails.blogspot.com/2019/05/django-user-authentication-how-to-login.html) follow this link for details
+[](https://cloudtails.blogspot.com/2019/05/django-user-authentication-how-to-login.html) follow this link for details
 
 Start with the DRF (Django Rest Framework) installation
 
@@ -29,7 +35,7 @@ pip3 install djangorestframework
 For our app to use DRF, we'll have to add rest_framework into our settings.py. 
 
   
-
+```python
 nano bio_metric/settings.py
 
 INSTALLED_APPS = [
@@ -54,7 +60,7 @@ INSTALLED_APPS = [
 
 ]
 
-
+```
 
 
 
@@ -312,7 +318,7 @@ class UserDetail(generics.RetrieveAPIView): # new
 
 
 
-Note on the view above I've used "http://www.django-rest-framework.org/api-guide/generic-views/#listcreateapiview">ListCreateAPIView;to create a read-only endpoint that lists all available Post instances and then http://www.django-rest-framework.org/api-guide/generic-views/#retrieveupdatedestroyapiview">RetrieveUpdateDestroyAPIView for a detail view of individual posts which supports CRUD-like functionality.</b>
+Note on the view above I've used [](http://www.django-rest-framework.org/api-guide/generic-views/#listcreateapiview">ListCreateAPIView)to create a read-only endpoint that lists all available Post instances and then [](http://www.django-rest-framework.org/api-guide/generic-views/#retrieveupdatedestroyapiview) RetrieveUpdateDestroyAPIView for a detail view of individual posts which supports CRUD-like functionality.
 
 
 ```python
@@ -345,7 +351,7 @@ urlpatterns = [
 
 ]
 
-urlpatterns = format_suffix_patterns(urlpatterns)&nbsp;<b> style="color: red;"># new</b>
+urlpatterns = format_suffix_patterns(urlpatterns) # new
 
 ```
 
@@ -390,7 +396,7 @@ urlpatterns = [
 ]
 
 ```
- Notice the name "login" above could be anything&nbsp;The important part is that "rest_framework.urls" .
+ Notice the name "login" above could be anything;The important part is that "rest_framework.urls" .
 
 
 
@@ -398,9 +404,9 @@ urlpatterns = [
 Fire up the server and test CRUD functionality 
 
 
-
+```python
 python3 manage.py runserver 192.168.0.245:8000
-
+```
 
 
 Post Lists ----- I get all the posts
