@@ -1,5 +1,5 @@
 ---
-title: 3 Best Places to Learn Python Programming for Free
+title: Pyven jinsi ya kuwezesha matole tofauti ya python kwenye konteina la docker
 image: ./images/python.jpg
 # imageAttribution: none needed for this post
 date: 2022-08-06
@@ -9,175 +9,258 @@ topPick: false
 popular: true
 ---
 
-This file contains various Markdown snippets that you may use to construct an article. Markdown is very easy to use!
+Kutokana na kasi ya ukuwaji wa tekinolojia hususana uwezo wakuandika application kwenye makonteina kama vile docker, na kuwa na mazingira ya uendelezaji ambayo yapo mawinguni "cloud development environments (CDEs)" ambayo yanawezesha docker.
 
-## Markdown Guide
+kume kuwa ni chachu kubwa kwa wasanidi kuacha kutumia nyenzo za zamani na kutumia furasa hii kuendeleza application zao kwani majukwa mengi kwenye internet yanayo toa huduma hizi hayatozi fedha zozote zile na manisha ni bure, wote tunajua adha iliyoko wakati una andika application kiasi cha **MB** ambazo unaweza ukatumia hilo la kwanza, sijaongelea uwezo wakifaa chako inapokuja kwenye swala zima la kuchakata data mfano vitu kama **CPU**, **GPU** **RAM** nk, na bado hatuja ogongelea utata mkubwa kama unafanya kazi kwenye timu pale mnapo share code alafu kwa mwingine hazifanyi kazi haya yote ya mekuwa ni sababu ya waendelezaji kujikita kwa kasi katika majukwa haya. Binafsi sikumbuki mara ya mwisho nilini nilipo jikuta na andika code kwenye machine yangu iwe kwa kutumia virtual machine au hata docker iliyo kuwa installed kwenye machine yangu, kwani hizo nyenzo kwa sasa zimekua zilipendwa. Hasa unahitaji kifaa cha kawaida sana iwe tablet au PC kujiunga kwenye haya majukwaa na tayari unaweza kuandika code. Wakati ambapo mazingira tumeyabadilisha na kuwa mawinguni, nyezo kama vile Docker badoo zinatumika kwa kiyasi kikubwa hata kwenye haya majukwaa ya mawinguni "cloud development environments (CDEs)"
 
-# h1 Heading
 
-## h2 Heading
+Kwa muktadha huu matumizi ya docker kwa wasanidi ya mekuwa ni muhimu na kufahamu kutumia docker imekuwa kama kufahamu kutumia computer au simujanja haiepukiki.
 
-### h3 Heading
 
-#### h4 Heading
 
-##### h5 Heading
+Mara kadhaa tumejikuta tukifanya kazi kwenye project mbali mbali ambazo mazingira yake hayafunani mfano unaweza kua unaandika code kwenye python 3.7 kwenye project nyingine ukawa unaandika kwenye python 3.9 kama unatumia docker ni rahisi kushawishika kuanzisha makonteina mawili moja kwajili ya 3.7 na jingine kwa ajili ya 3.9, mhh hapa tutakuwa hatujafanya matumizi mazuri ya nyezo zetu "ni ufujaji wa malighafi kwa namna moja au nyingine", njia ambayo ni sahihi nikuwezesha konteina lako liweze kumudu mazingira yote ambayo itarushiwa. 
 
-###### h6 Heading
+Kwenye makala haya tutakwenda kuangali jisi ambavyo unaweza ukafanya **configuration** kwenye konteina lako la docker ili liweze kumudu matoleo mbali mbali ya python, na kama hufahu kutumia docker usihofo nita kutembeze mjini.
 
-```
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-```
+Majukwa mengi ambayo yanatoa huduma za hizi IDE yana ingiliana vizuri na mabomba ya uendelezaji kama vile GitLab, GitHub, na Bitbucket. Ili kuanza mchakato huu nita tumia GitHub kama hadhina yangu ya code
+Hasa nita anzaa na hadhina ambayo ni mpya Ili twende sawa. Kwenye hadhina hii kwa sasa haitakuwa na chochote isipokuwa faili moja tu la readme.md.
 
-## Horizontal Rules
+Kutokea hapo kazi ni kwako kuchagua jukwaa ambalo ungependelea ulitumie kwa ajili ya usanidi majukwa ni mengi na yanatofautiana kwenye ukomo. Gitpod, Codespace, Codesandbox, repl.it goormIDE nk
 
----
 
----
 
----
+Nimatumaini yangu kwamba umekwisha fanya utafititi wa jukwaa utakalo tumia, anzisha IDE ya jukwaa lako pendwa ukitokea kwenye hii hadhina uliyo itengeneza
+nikutaarifu tu kwamba mfano huu unazingatia mazingira ya **deb** hususani nitatumia Ubuntu lakini unaweza kutumia debian bila hofu kama uko nje
+ya mazingira ya **deb** mfano **centos** itakulazimu kujua unacho fanya.
 
-```
-___
+ukiwa kwenye hilo jukwaa lako Utaanza na kutengeneza faili la `docker-compose.yml`
 
----
 
-***
+```yml
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
 ```
 
-## Links
+Ngoja tulivunje vunje kwa muktasiri ili kuweza kuelewa nini kinaendelea kwenye hilo faila:
 
-[Link Text](http://dev.nodeca.com)
+Faili hili la **docker-compose** lina onyesha huduma inayo julikana kama "web". Mchakato mzima uko hivi:
 
-[Link with Title](http://nodeca.github.io/pica/demo/ 'Title Text!')
-
-```
-[Link Text](http://dev.nodeca.com)
-
-[Link with Title](http://nodeca.github.io/pica/demo/ "Title Text!")
-```
-
-## Images
-
-Images are easy to use in Markdown.
-
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg 'The Stormtroopocat')
-![Alt text goes here](./images/html-2.png)
-
-```
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-![Alt text goes here](./images/html-2.png)
-
-```
-
-Note that although possible with special configuration, you currently cannot modify the size of in-article images. The current max width is 650px. Please size image files accordingly for the fastest build times!
-
-## Emphasis
-
-**This is bold text**
-
-**This is bold text**
-
-_This is italic text_
-
-_This is italic text_
-
-~~Strikethrough~~
-
-```
-**This is bold text**
-
-__This is bold text__
-
-*This is italic text*
-
-_This is italic text_
-
-~~Strikethrough~~
-```
-
-## Blockquotes
-
-IMPORTANT: If you don't see any styling here, we haven't decided on blockquote styling yet :)
-
-> Blockquotes can also be nested...
->
-> > ...by using additional greater-than signs right next to each other...
-> >
-> > > ...or with spaces between arrows.
-
-```
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
->>> ...or with spaces between arrows.
-```
-
-## Lists
-
-#### Unordered
-
-- Create a list by starting a line with `+`, `-`, or `*`
-- Very easy!
-
-#### Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-###### Start numbering with offset:
-
-158. foo
-159. bar
-
-```
-#### Unordered
-
-- Create a list by starting a line with `+`, `-`, or `*`
-- Very easy!
+	• **version:** '3.8': hii inaonyeshe toleo la faili la docker-compose ambalo tunatumia.
+	• **services:** Hapa ndipo unapo onyesha huduma za application yako.
+	• **web:** Hili ndilo jina la huduma tunayo onyesha.
+	• **build:** Hapa kwenye hii sehemu tuna bainisha jinsi tutakavyo jenga image ya docker Kwa ajili ya huduma.
+		○ **context: .:** Hii ina ashiria kwamba tutajenga kwenye directory hii, tafsiri yake nikwamba itaangalia Dockerfile kwenye hii directory.
+		○ **dockerfile:** Dockerfile: Hii ina bainisha kua jina la dockerfile ndilo litakalo tumika kujenga image. Kwenye kisa hiki, ni Dockerfile kwenye hii directory.
+**Muktasari**
+Hili faili la docker-compose haswa lina iambia Docker kujenga image kwa kutumia Dockerfile iliyo kuwepo kwenye hii directory, nakuipa jina la "web" kama huduma. Una weza kutumia faili hili la docker-compose kujenga na kuendesha application kwa kutumia command moja tu: `docker-compose up`.
 
 
-#### Ordered
 
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
+Tengeneza faili jingine na ulipe jina la `Dockerfile`
 
-###### Start numbering with offset:
 
-158. foo
-159. bar
+```yml
+# Tumia image ya Ubuntu
+FROM ubuntu:latest
+
+# Weka directory ya kufanyia kazi
+WORKDIR /app
+
+# Sasisha hadhina 
+RUN apt-get update
+
+# Wezesha mode ya noninteractive kukwepa kuulinzwa maswali wakati wa installation ya vifurushi
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install supervisor na vitegemezi vingine vya msingi
+RUN apt-get install -y --no-install-recommends \
+        supervisor \
+        software-properties-common \
+        apt-transport-https \
+        ca-certificates \
+        wget \
+        curl \
+        python3-pip \
+        python3-venv \
+        python3-dev \
+        lsb-release \
+        git \
+        make \
+        build-essential \
+        libssl-dev \
+        zlib1g-dev \
+        libbz2-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        llvm \
+        libncurses5-dev \
+        libncursesw5-dev \
+        xz-utils \
+        tk-dev \
+        libffi-dev \
+        liblzma-dev
+
+# Install pyenv
+ENV PYENV_ROOT /opt/pyenv
+ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+RUN curl https://pyenv.run | bash \
+    && echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
+
+# Install Python 3.10 na uweke hili toleo kama chaguo la msingi 
+RUN pyenv install 3.10.0 \
+    && pyenv global 3.10.0
+
+# Copy configuration za file la supervisord
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Copy kila kitu kutokea kwenye hii directory na kuweka kwenye application 
+COPY . /app/
+
+# azisha supervisord kusimamia michakato
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 ```
 
-## Code
 
-Inline `code`
+Faili hili la Dockerfile lina weka mazingingira kwajili ya kuendesha application:
+	1. Ina Anza na kiyasi kidogo cha image ya Ubuntu.
+	2. Ina  weka directory ya kufanyia kazi kama /app.
+	3. Ina Install vitegemezi mbali mbali na packages kwa kutumia apt-get.
+	4. Ina Copi code za application kwenye konteina /app directory.
+	5. Ina azisha supervisord kusimamia michakato.
 
-Block code "fences"
+Kwa ujumla, ni kiwango cha Dockerfile kwenye kuweka mazingira ya kuendesha application, hususani Python. 
+Tuna vitegemezi kadhaa ambayo tunavihitaji ili zoezi letu liweze kufauli,  nita tengeneza script ambayo lengo lake ni kutenganisha installation ya vitegemezi,
+Ili kuepuka kutumia mda mrefu wa kujenga konteina kunako sababishwa na kuinstall niongeza nyingine ya vitegemezi wakati wa mchakato wa kujenga docker,
+
+
+Tengeneza faili jingine na ulipe jina la `entrypoint.sh` 
+
+
+```yml
+#!/bin/bash
+
+# Toka kama command yoyote ile ita feli
+set -e
+
+# Install CMake kama bado haijawa installed
+if ! command -v cmake &> /dev/null; then
+    apt-get update
+    apt-get install -y --no-install-recommends wget gnupg
+    wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc | apt-key add -
+    apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main"
+    apt-get update
+    apt-get install -y cmake
+fi
+
+# Install vitegemezi vingine vinyo hitajika
+apt-get install -y --no-install-recommends \
+    build-essential \
+    libssl-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    llvm \
+    libncurses5-dev \
+    libncursesw5-dev \
+    xz-utils \
+    tk-dev \
+    libffi-dev \
+    supervisor
+
+# Copy configuration za faili la supervisord 
+cp /app/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Install pyenv kama bado hajawa installed
+if ! command -v pyenv &> /dev/null; then
+    PYENV_ROOT="/opt/pyenv"
+    curl https://pyenv.run | bash
+    echo 'export PYENV_ROOT="/opt/pyenv"' >> /etc/profile.d/pyenv.sh
+    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> /etc/profile.d/pyenv.sh
+    echo 'eval "$(pyenv init --path)"' >> /etc/profile.d/pyenv.sh
+fi
+
+# Activate pyenv
+source /etc/profile.d/pyenv.sh || true  # Use 'true' to avoid script failure if sourcing fails
+
+# Install Python 3.10 kama bado hajawa installed nakuifanya iwe chaguo la msingi
+if ! pyenv versions | grep -q "3.10.0"; then
+    pyenv install 3.10.0
+    pyenv global 3.10.0
+fi
+
+# Anzisha supervisord kusimamia michakato
+exec supervisord -c /etc/supervisor/conf.d/supervisord.conf
 
 ```
-Sample text here...
-Can span multi lines
+
+
+kuinstall hivi vitegemezi vya ziada bado natumia `apt-get install`  "kumbuka nipo kwenye mfumo wa deb" hivi vitegemezi ninavyo vionyesha hapa vitakuwa installed wakati konteina linaanza
+
+  
+1. **Shuhulikia Error** : ni vizuri kuaanza na kuhakikisha script haita endlea kama kukitoke kosa la command yoyote ile kufeli kama ulikuwa una jiuliza kwa nini `set -e ` mwanzoni mwa script. 
+2. **apt-get update Mara moja**: Naita `apt-get update` mara moja kuepuka kutengeneza matabaka mengine ya imge na hivyo kufanya image kua kubwa pasipokuwa na sababu.  Hivyo hivyo na kwenye kuinstall vifurushi vyote Natumia **apt-get install vifurushi**
+3. **Tumia Absolute Paths**: Natumia njia ya moja kwa moja wakati na copy mafaile na ninapo tekeleza   commands kukwepa mkanganyiko wowote ule ambao unaweza kutoke.
+4. **Angalia kama Pyenv Imeshakua Installed**: Muhimu kuangalia kama Pyenv imeshakua installed, kuepuka kuinstall kwa mara nyingine bila sababu.
+
+
+Mara baada ya kutengeneza hiyo script, hakikisha inaweza kutekelenzwa 
+
+chmod +x /ai/entrypoint.sh
+
+
+Faili la `supervisord.conf` tume liita sehemu kadhaa lakini bado hatujalitengeneza, sasa litengeneze
+
+
+```yml
+[supervisord]
+nodaemon=true
+
+[program:shell]
+command=/bin/bash
 ```
 
-````
-Inline `code`
 
-Block code "fences"
+kutumia **supervisord** kusimamia michakato ndani ya konteina ni muhimu kwa sababu tunataka konteina liendelee kufanya kazi na mwingiliana wa bash shell.
+Faili la `supervisord.conf` lina onyesha configuration za usimamizi "supervisord", pamoja na michakato gani ya kuanzashi na kusimamia . Kwenye mpangilio wetu, tunatumia `supervisord` kuanzisha mchakato wa `bash shell`, kuhakikisha kwamba konteiner litaendelea kufanya kazi hata baada ya mtumiaji kutoka kwenye **shell**.
+Bila `supervisord` (au mchakato wowote kama huu kwajili ya usimamizi),  konteina lita sitisha kuendele kufanya kazi mara baada ya mtumiaji kutoka kwenye `bash shell`, na siyo tabiya ambayo tuna ihitaji.
+Kwa hiyo, kwa ufupi, supervisord ni ya lazima kwenye kisa chetu ili konteina liendelee kufanya kazi na mwingiliano wa `bash shell`.
 
-```
-Sample text here...
-Can span multi lines
-```
-````
 
-At the moment, we have not implemented syntax highlighting. We recommend either prismjs or highlightjs if you'd like to add highlighting!
 
-## Tables
+Tumesha tengeneza mafaili au scripts ambazo zipo tayari kutekelezwa ili kujenga konteina la docker ambalo linauweza wa kuandaa manzingira ya python yenye 
+matoleo tofauti tofauti lakini kabla hatuja songa mbele na zoezi la kujenga hili konteina ningependa tuangalie kwa undani kidogo 
+command kubwa mbili ambazo ninge penda uweze kuzifahamu, ili uweze kuanzisha  konteina lako la docker kwa usahihi zaidi.
+	1. **docker run -it my_image_name**:
+		○  Command hii ina anzisha konteina kutokea kwenye image ya Docker utakayo iyoshesha **(jina_laimage_yangu)** katika hali ya kuingiliana **(-it)**.
+		○ Kibendera cha `-i` kinaacha wazi `STDIN` hatakama haijaambatanishwa, na kuwezesha kuingiliana na kontaina.
+		○ Kibendera cha -t ndicho kinacho tenga `TTY`, ya ungo na kweli ambayo itakupatia terminal kwenye konteina.
+		○ Kwa kutumia command hii, unaanzisha konteina moja kwa moja  na kuingliana nalo  kwa kutumia bash shell. 
+	2. **docker-compose up -d**:
+		○ Command hii ina anzisha huduma ulizo zionyesha kwenye faili la `docker-compose.yml` katika hali ya kuambatanisha `(-d)`, inamanisha  makonteina yataanza kwa nyuma.
+		○ **docker-compose** ni nyenzo yaku fafanua na kuanzisha  makonteina kadhaa ya application ya docker. Ina rahisisha mchakato  wakusimamia makonteina kadhaa kwa   kuwezesha kufafanuwa huduma na **configurations** zake kwenye faili moja la  **YAML**.
+		○ Kwa kutumia `docker-compose up -d`, docker Compose inasoma faili la `docker-compose.yml`, na kujenga images za muhimu kama hazipo, inatengeneza na kuanzisha makonteina yaliyo fafanuliwa kwenye file, na kuyaambatanisha ili yaweze kufanya kazi kwa nyuma.
 
-Currently, we do not use HTML tables, however we may implement styling for this if there is a use-case in the future.
+Kwa ufupi, command ya `docker run` inatumika kuanzisha konteina moja, na moja kwa  moja  inakupa uwezo wa kuingliana nalo, na `docker-compose up -d` ina tumika kusimamia  makonteina kadhaa ya applications zilizo fafanuliwa kwenye faili la `docker-compose.yml`, huanzisha huduma zikiwa katika hali ya kuambatanishwa .
+
+
+Tumeona kwamba unaweza kutumia command ya `docker run -it` kuanzisha konteina kutokea kwenye imagine utakayo kua umeionyesha na moja kwa moja konteina lita anza na utaingiliana nalo command nyingine inayo kupa uwezo wa kuingiliana na konteina lako ni docker-compose exec tuna itumia kutekeleza command ndani ya konteina linalo simamiwa na **Docker Compose**. Lazima huduma ziwe zimefafanuliwa kwenye faili la `docker-compose.yml`
+ Uchaguzi wa command ipi utumie inakuja kwenye mazingira. Kama unataka kuanzisha konteina jipya kutokea kwenye image na uingiliane nalo moja kwa moja hopo  `run -it` inakuwa sahihi inafanya kazi na image yoyote na haihitaji uwepo wa faili la `docker-compose.yml` 
+
+
+Kwanini kuandikia mate wakati wino upo, twende tukazishuhudi command zote mbili kwa vitendo ili kujifunza na kuielewa docker kabla yakuzama kenye pyenv
+
+
+
+
+
+
+
+
+
+
