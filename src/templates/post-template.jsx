@@ -62,7 +62,7 @@ const PostTemplate = ({ data, children }) => {
                   <ul className="card-meta list-inline">
                     <li className="list-inline-item">
                       <AiOutlineClockCircle />
-                      {Math.ceil(words / 275)} Min Read
+                     Dakika {Math.ceil(words / 275)} za kusoma
                     </li>
                     
                     <li className="list-inline-item">
