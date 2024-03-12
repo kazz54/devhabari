@@ -6,7 +6,7 @@ const Notification = () => {
   return (
     <NotificationStyles>
       <div className="notification-top-bar">
-        <p>Devdura0 inatafuta wawekezaji</p>
+        <p>DevHabari inatafuta wawekezaji</p>
         <Link to="/support-us">Tuwezeshe</Link>
       </div>
     </NotificationStyles>
