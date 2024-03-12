@@ -57,6 +57,10 @@ const PostTemplate = ({ data, children }) => {
                 />
                 <div className="post-info">
                   <ul className="card-meta list-inline">
+                    <li className="list-inline-item">
+                      <AiOutlineClockCircle />
+                      {Math.ceil(words / 275)} Min Read
+                    </li>
                     
                     <li className="list-inline-item">
                       <GoCalendar /> {date}
