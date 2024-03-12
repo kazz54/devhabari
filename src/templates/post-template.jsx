@@ -34,6 +34,9 @@ const PostTemplate = ({ data, children }) => {
       },
       body,
       excerpt,
+      fields: {
+        timeToRead: { words }, // Extracting the words count
+      },
     },
   } = data
   // {console.log(words)}
