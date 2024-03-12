@@ -86,7 +86,7 @@ const Trending = () => {
               <ul className="card-meta list-inline">
                 <li className="list-inline-item">
                   <AiOutlineClockCircle />
-                  Dakika {Math.ceil(post.fields.timeToRead.words / 275)} Zaa Kusoma
+                  Dakika {Math.ceil(post.fields.timeToRead.words / 275)} Za Kusoma
                 </li>
                 <li className="list-inline-item">
                   <GoCalendar /> {date}
