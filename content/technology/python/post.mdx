@@ -3,7 +3,7 @@ title: Pyven jinsi ya kuwezesha matole tofauti ya python kwenye konteina la dock
 image: ./images/python.jpg
 # imageAttribution: none needed for this post
 date: 2022-08-06
-category: Technology
+category: Docker
 trending: false
 topPick: false
 popular: true
@@ -246,13 +246,21 @@ Tumesha tengeneza mafaili au scripts ambazo zipo tayari kutekelezwa ili kujenga 
 matoleo tofauti tofauti lakini kabla hatuja songa mbele na zoezi la kujenga hili konteina ningependa tuangalie kwa undani kidogo 
 command kubwa mbili ambazo ninge penda uweze kuzifahamu, ili uweze kuanzisha  konteina lako la docker kwa usahihi zaidi.
 	1. **docker run -it my_image_name**:
+
 		○  Command hii ina anzisha konteina kutokea kwenye image ya Docker utakayo iyoshesha **(jina_laimage_yangu)** katika hali ya kuingiliana **(-it)**.
+
 		○ Kibendera cha `-i` kinaacha wazi `STDIN` hatakama haijaambatanishwa, na kuwezesha kuingiliana na kontaina.
+
 		○ Kibendera cha -t ndicho kinacho tenga `TTY`, ya ungo na kweli ambayo itakupatia terminal kwenye konteina.
-		○ Kwa kutumia command hii, unaanzisha konteina moja kwa moja  na kuingliana nalo  kwa kutumia bash shell. 
+
+		○ Kwa kutumia command hii, unaanzisha konteina moja kwa moja  na kuingliana nalo  kwa kutumia bash shell.
+
 	2. **docker-compose up -d**:
+
 		○ Command hii ina anzisha huduma ulizo zionyesha kwenye faili la `docker-compose.yml` katika hali ya kuambatanisha `(-d)`, inamanisha  makonteina yataanza kwa nyuma.
+
 		○ **docker-compose** ni nyenzo yaku fafanua na kuanzisha  makonteina kadhaa ya application ya docker. Ina rahisisha mchakato  wakusimamia makonteina kadhaa kwa   kuwezesha kufafanuwa huduma na **configurations** zake kwenye faili moja la  **YAML**.
+
 		○ Kwa kutumia `docker-compose up -d`, docker Compose inasoma faili la `docker-compose.yml`, na kujenga images za muhimu kama hazipo, inatengeneza na kuanzisha makonteina yaliyo fafanuliwa kwenye file, na kuyaambatanisha ili yaweze kufanya kazi kwa nyuma.
 
 Kwa ufupi, command ya `docker run` inatumika kuanzisha konteina moja, na moja kwa  moja  inakupa uwezo wa kuingliana nalo, na `docker-compose up -d` ina tumika kusimamia  makonteina kadhaa ya applications zilizo fafanuliwa kwenye faili la `docker-compose.yml`, huanzisha huduma zikiwa katika hali ya kuambatanishwa .
