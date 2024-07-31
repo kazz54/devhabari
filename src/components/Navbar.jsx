@@ -25,8 +25,8 @@ const Navbar = ({ toggle }) => {
                 height="100"
               />*/}
               <div className="logo-text">
-                <span className="nav-word-open">Dev</span>
-                <span className="nav-word-ed">Habari</span>
+                <span className="nav-word-open">Ilala Masjid</span>
+                <span className="nav-word-ed">Takwa</span>
               </div>
             </Link>
 
